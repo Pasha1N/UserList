@@ -1,2 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Users />
+<Users>
+  <User Password="1234" Username="fuckyou" />
+</Users>

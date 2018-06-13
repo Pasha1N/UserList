@@ -7,14 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UserList.Mvp.Views;
 
 namespace UserList
 {
-    public partial class Registration : Form
+    public partial class Registration : Form,IViewRegister
     {
         public Registration()
         {
             InitializeComponent();
         }
+
+        public new void Show()
+        {
+            Show();
+        }
+
+
+
+
+
     }
 }

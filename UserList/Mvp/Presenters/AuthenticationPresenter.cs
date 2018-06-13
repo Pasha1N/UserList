@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UserList.AbstractFactory;
 using UserList.Mvp.Models;
 using UserList.Mvp.Views;
 
@@ -10,11 +11,11 @@ namespace UserList.Mvp.Presenters
 {
     class AuthenticationPresenter:IPresenter
     {
-        private readonly IAuthenticationService authenticationService;
-        private readonly IPresenter mainPresenter;
+        private readonly AuthenticationService authenticationService;
+        private readonly IFactoryThePresenters mainPresenter;
         private readonly IViewAuthentication view;
 
-        public AuthenticationPresenter(IViewAuthentication view, IPresenter mainPresenter, IAuthenticationService authenticationService)
+        public AuthenticationPresenter(IViewAuthentication view, IFactoryThePresenters mainPresenter, AuthenticationService authenticationService)
         {
             this.authenticationService = authenticationService;
             this.mainPresenter = mainPresenter;
@@ -28,14 +29,20 @@ namespace UserList.Mvp.Presenters
 
             if (authenticationService.Login(user))
             {
-                mainPresenter.Run();
-                view.Close();
+                mainPresenter.CreateUserPresenter().Run();
+                 view.Close();
 
             }
             else
             {
                 view.ShowError("Wrong login or password");
             }
+        }
+
+        public void Register(object sendler,EventArgs e)
+        {
+            mainPresenter.
+
         }
 
         private void SubscribeToViewEvents()

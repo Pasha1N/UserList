@@ -45,6 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractFactory\FactoryThePresenters.cs" />
+    <Compile Include="AbstractFactory\IFactoryThePresenters.cs" />
     <Compile Include="Authentication.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +56,7 @@
     <Compile Include="Database.cs" />
     <Compile Include="Mvp\Models\IAuthenticationService.cs" />
     <Compile Include="Mvp\Models\AuthenticationService.cs" />
+    <Compile Include="Mvp\Models\RegisterService.cs" />
     <Compile Include="Mvp\Models\User.cs" />
     <Compile Include="Mvp\Presenters\IPresenter.cs" />
     <Compile Include="Mvp\Presenters\AuthenticationPresenter.cs" />

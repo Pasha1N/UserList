@@ -27,6 +27,8 @@ namespace UserList
 
         public event EventHandler<EventArgs> Login;
 
+        public event EventHandler<EventArgs> Register;
+
         private void loginButton_Click(object sender, EventArgs e)
         {
             Login?.Invoke(this, EventArgs.Empty);
@@ -34,7 +36,7 @@ namespace UserList
 
         private void registerButton_Click(object sender, EventArgs e)
         {
-
+            Register?.Invoke(this, EventArgs.Empty);
         }
 
         public void ShowError(string messege)

@@ -13,6 +13,8 @@ namespace UserList.Mvp.Views
 
         event EventHandler<EventArgs> Login;
 
+        event EventHandler<EventArgs> Register;
+
         void ShowError(string message);
     }
 }

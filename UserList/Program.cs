@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UserList.AbstractFactory;
 using UserList.Mvp.Models;
 using UserList.Mvp.Presenters;
 using UserList.Mvp.Views;
@@ -25,11 +26,13 @@ namespace UserList
             UserList userList = new UserList(applicationContext);
             UserPresenter userPresenter=new UserPresenter(userList);
             AuthenticationService authenticationService = new AuthenticationService();
-
+            Registration registration = new Registration();
             User user = new User("Pavel", "1234");
             Database.AddUser(user);
 
-            AuthenticationPresenter authenticationPresenter = new AuthenticationPresenter(authentication, userPresenter, authenticationService);
+            FactoryThePresenters factoryThePresenters = new FactoryThePresenters(registration, userList);
+
+            AuthenticationPresenter authenticationPresenter = new AuthenticationPresenter(authentication, factoryThePresenters, authenticationService);
             authenticationPresenter.Run();
         }
     }

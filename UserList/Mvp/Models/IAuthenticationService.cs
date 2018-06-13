@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace UserList.Mvp.Models
 {
-    internal interface IAuthenticationService
-    {
-        bool Login(User user);
-    }
+   // internal interface IAuthenticationService
+   // {
+  //      bool Login(User user);
+  //  }
 }

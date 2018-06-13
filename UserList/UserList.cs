@@ -23,7 +23,7 @@ namespace UserList
 
         public new void Show()
         {
-            context.MainForm = this;
+           context.MainForm = this;
             base.Show();
         }
     }

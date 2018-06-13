@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UserList.Mvp.Models
 {
-    class AuthenticationService : IAuthenticationService
+    class AuthenticationService //: IAuthenticationService
     {
         public bool Login(User user)
         {
