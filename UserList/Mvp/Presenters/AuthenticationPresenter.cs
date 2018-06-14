@@ -31,7 +31,6 @@ namespace UserList.Mvp.Presenters
             {
                 mainPresenter.CreateUserPresenter().Run();
                  view.Close();
-
             }
             else
             {
@@ -39,17 +38,16 @@ namespace UserList.Mvp.Presenters
             }
         }
 
-        public void Register(object sendler,EventArgs e)
+        public void ShowRegistrationWindow(object sendler,EventArgs e)
         {
-            mainPresenter.
-
+            mainPresenter.CreateRegisterPresenter().Run();
         }
 
         private void SubscribeToViewEvents()
         {
             view.Login += Authentication;
+            view.Register += ShowRegistrationWindow;
         }
-
 
         public void Run()
         {

@@ -18,14 +18,27 @@ namespace UserList
             InitializeComponent();
         }
 
+        public string Password => passwordtextBox.Text;
+
+        public string ConfirmPassword => confirmPasswordtextBox.Text;
+
+        public string Username => usernameTextBox.Text;
+
+        public event EventHandler<EventArgs> Register;
+
         public new void Show()
         {
-            Show();
+            ShowDialog();
         }
 
+        private void registerButton_Click(object sender, EventArgs e)
+        {
+            Register?.Invoke(this, EventArgs.Empty);
+        }
 
+        public void ShowError(string message)
+        {
 
-
-
+        }
     }
 }

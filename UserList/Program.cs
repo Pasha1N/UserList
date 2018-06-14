@@ -27,8 +27,6 @@ namespace UserList
             UserPresenter userPresenter=new UserPresenter(userList);
             AuthenticationService authenticationService = new AuthenticationService();
             Registration registration = new Registration();
-            User user = new User("Pavel", "1234");
-            Database.AddUser(user);
 
             FactoryThePresenters factoryThePresenters = new FactoryThePresenters(registration, userList);
 
