@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UserList.Mvp.Views
 {
-    internal interface IViewRegister:IView
+    internal interface IViewRegister : IView
     {
         string Password { get; }
 
@@ -15,6 +15,10 @@ namespace UserList.Mvp.Views
         string ConfirmPassword { get; }
 
         event EventHandler<EventArgs> Register;
+
+        event EventHandler<EventArgs> Validation;
+
+        void EnabledRegister(bool enabled);
 
         void ShowError(string message);
     }

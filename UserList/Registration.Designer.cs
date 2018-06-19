@@ -94,6 +94,7 @@
             this.passwordtextBox.Name = "passwordtextBox";
             this.passwordtextBox.Size = new System.Drawing.Size(169, 20);
             this.passwordtextBox.TabIndex = 12;
+            this.passwordtextBox.TextChanged += new System.EventHandler(this.passwordtextBox_TextChanged);
             // 
             // usernameTextBox
             // 
@@ -101,6 +102,7 @@
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(169, 20);
             this.usernameTextBox.TabIndex = 11;
+            this.usernameTextBox.TextChanged += new System.EventHandler(this.usernameTextBox_TextChanged);
             // 
             // label2
             // 
@@ -126,6 +128,7 @@
             this.confirmPasswordtextBox.Name = "confirmPasswordtextBox";
             this.confirmPasswordtextBox.Size = new System.Drawing.Size(169, 20);
             this.confirmPasswordtextBox.TabIndex = 18;
+            this.confirmPasswordtextBox.TextChanged += new System.EventHandler(this.confirmPasswordtextBox_TextChanged);
             // 
             // label3
             // 

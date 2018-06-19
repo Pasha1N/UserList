@@ -14,12 +14,14 @@ namespace UserList.Mvp.Presenters
         private readonly IViewRegister view;
         private readonly IFactoryThePresenters mainPresenter;
         private RegisterService registerService;
+        private IViewUserList viewUserList;
 
-        public RegisterPresenter(IViewRegister view, IFactoryThePresenters mainPresenter, RegisterService registerService)
+        public RegisterPresenter(IViewRegister view, IFactoryThePresenters mainPresenter, RegisterService registerService,IViewUserList viewUserList)
         {
             this.mainPresenter = mainPresenter;
             this.view = view;
             this.registerService = registerService;
+            this.viewUserList = viewUserList;
             SubscribeToViewEvents();
         }
 
@@ -27,7 +29,10 @@ namespace UserList.Mvp.Presenters
         {
            if(view.Password==view.ConfirmPassword)
             {
-                registerService.CheckIn(view.Username,view.Password, view.ConfirmPassword);
+                if(registerService.CheckIn(view.Username,view.Password, view.ConfirmPassword))
+                {
+                    viewUserList.Ru;
+                }
             }
            else
             {
@@ -38,9 +43,22 @@ namespace UserList.Mvp.Presenters
         private void SubscribeToViewEvents()
         {
             view.Register += CheckIn;
+            view.Validation += verification;
         }
 
-        public void Run()
+        public void verification(object sendler, EventArgs e)
+        {
+            if(registerService.Validation(view.Username,view.Password,view.ConfirmPassword))
+            {
+                view.EnabledRegister(true);
+            }
+            else
+            {
+                view.EnabledRegister(false);
+            }
+        }
+
+            public void Run()
         {
             view.Show();
         }

@@ -54,7 +54,6 @@
       <DependentUpon>Authentication.cs</DependentUpon>
     </Compile>
     <Compile Include="Database.cs" />
-    <Compile Include="Mvp\Models\IAuthenticationService.cs" />
     <Compile Include="Mvp\Models\AuthenticationService.cs" />
     <Compile Include="Mvp\Models\RegisterService.cs" />
     <Compile Include="Mvp\Models\User.cs" />

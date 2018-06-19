@@ -11,7 +11,7 @@ using UserList.Mvp.Views;
 
 namespace UserList
 {
-    public partial class UserList : Form,IViewUserList
+    public partial class UserList : Form, IViewUserList
     {
         private readonly ApplicationContext context;
 
@@ -22,9 +22,10 @@ namespace UserList
         }
 
         public new void Show()
-        {
-           context.MainForm = this;
-            base.Show();
+         {
+          context.MainForm = this;
+        // base.Show();
+          Application.Run(context);
         }
     }
 }

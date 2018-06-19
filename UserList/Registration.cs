@@ -11,7 +11,7 @@ using UserList.Mvp.Views;
 
 namespace UserList
 {
-    public partial class Registration : Form,IViewRegister
+    public partial class Registration : Form, IViewRegister
     {
         public Registration()
         {
@@ -26,14 +26,44 @@ namespace UserList
 
         public event EventHandler<EventArgs> Register;
 
-        public new void Show()
+        public event EventHandler<EventArgs> Validation;
+
+        private void usernameTextBox_TextChanged(object sender, EventArgs e)
         {
-            ShowDialog();
+            Validation?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void passwordtextBox_TextChanged(object sender, EventArgs e)
+        {
+            Validation?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void confirmPasswordtextBox_TextChanged(object sender, EventArgs e)
+        {
+            Validation?.Invoke(this, EventArgs.Empty);
         }
 
         private void registerButton_Click(object sender, EventArgs e)
         {
             Register?.Invoke(this, EventArgs.Empty);
+        }
+
+        public void EnabledRegister(bool enabled)
+        {
+            if (enabled)
+            {
+                registerButton.Enabled = true;
+            }
+            else
+            {
+                registerButton.Enabled = false;
+            }
+        }
+
+        public new void Show()
+        {
+            registerButton.Enabled = false;
+            ShowDialog();
         }
 
         public void ShowError(string message)

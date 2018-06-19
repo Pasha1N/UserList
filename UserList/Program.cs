@@ -29,7 +29,6 @@ namespace UserList
             Registration registration = new Registration();
             RegisterService registerService = new RegisterService();
             FactoryThePresenters factoryThePresenters = new FactoryThePresenters(registration, userList,registerService);
-           // RegisterPresenter registerPresenter = new RegisterPresenter(registration, factoryThePresenters, registerService);
             AuthenticationPresenter authenticationPresenter = new AuthenticationPresenter(authentication, factoryThePresenters, authenticationService);
             authenticationPresenter.Run();
         }

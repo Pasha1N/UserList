@@ -29,7 +29,7 @@ namespace UserList.AbstractFactory
 
         public IPresenter CreateRegisterPresenter()
         {
-            return new RegisterPresenter(viewRegister, this, registerService);
+            return new RegisterPresenter(viewRegister, this, registerService,viewUserList);
         }
     }
 }
