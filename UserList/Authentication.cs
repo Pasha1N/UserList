@@ -29,6 +29,8 @@ namespace UserList
 
         public event EventHandler<EventArgs> Register;
 
+        public event EventHandler<EventArgs> Validation;
+
         private void loginButton_Click(object sender, EventArgs e)
         {
             Login?.Invoke(this, EventArgs.Empty);
@@ -39,9 +41,31 @@ namespace UserList
             Register?.Invoke(this, EventArgs.Empty);
         }
 
+        private void usernameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Validation?. Invoke(this, EventArgs.Empty);
+        }
+
+        private void passwordTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Validation?.Invoke(this, EventArgs.Empty);
+        }
+
         public void ShowError(string messege)
         {
-            MessageBox.Show(messege, "Error", MessageBoxButtons.OK,MessageBoxIcon.Error);
+            MessageBox.Show(messege, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        public void EnabledLogin(bool enabled)
+        {
+            if (enabled)
+            {
+                loginButton.Enabled = true;
+            }
+            else
+            {
+                loginButton.Enabled = false;
+            }
         }
 
         public new void Show()
@@ -49,5 +73,6 @@ namespace UserList
             context.MainForm = this;
             Application.Run(context);
         }
+
     }
 }

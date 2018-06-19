@@ -38,7 +38,7 @@ namespace UserList
 
         public void ShowError(string message)
         {
-
+            MessageBox.Show(message);
         }
     }
 }

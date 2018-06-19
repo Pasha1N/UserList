@@ -15,6 +15,10 @@ namespace UserList.Mvp.Views
 
         event EventHandler<EventArgs> Register;
 
+        event EventHandler<EventArgs> Validation;
+
+        void EnabledLogin(bool enabled);
+        
         void ShowError(string message);
     }
 }

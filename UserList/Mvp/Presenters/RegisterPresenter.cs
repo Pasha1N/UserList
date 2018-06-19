@@ -12,27 +12,24 @@ namespace UserList.Mvp.Presenters
     class RegisterPresenter : IPresenter
     {
         private readonly IViewRegister view;
-
-        private readonly RegisterService registerService;
         private readonly IFactoryThePresenters mainPresenter;
-
+        private RegisterService registerService;
 
         public RegisterPresenter(IViewRegister view, IFactoryThePresenters mainPresenter, RegisterService registerService)
         {
-            this.registerService = registerService;
             this.mainPresenter = mainPresenter;
             this.view = view;
+            this.registerService = registerService;
             SubscribeToViewEvents();
         }
 
         public void CheckIn(object sendler,EventArgs e)
         {
-
-            if(view.Password==view.ConfirmPassword)
+           if(view.Password==view.ConfirmPassword)
             {
-                registerService.SavingData(view.Username, view.Password, view.ConfirmPassword);
+                registerService.CheckIn(view.Username,view.Password, view.ConfirmPassword);
             }
-            else
+           else
             {
                 view.ShowError("Passwords do not match");
             }

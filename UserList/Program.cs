@@ -27,9 +27,9 @@ namespace UserList
             UserPresenter userPresenter=new UserPresenter(userList);
             AuthenticationService authenticationService = new AuthenticationService();
             Registration registration = new Registration();
-
-            FactoryThePresenters factoryThePresenters = new FactoryThePresenters(registration, userList);
-
+            RegisterService registerService = new RegisterService();
+            FactoryThePresenters factoryThePresenters = new FactoryThePresenters(registration, userList,registerService);
+           // RegisterPresenter registerPresenter = new RegisterPresenter(registration, factoryThePresenters, registerService);
             AuthenticationPresenter authenticationPresenter = new AuthenticationPresenter(authentication, factoryThePresenters, authenticationService);
             authenticationPresenter.Run();
         }

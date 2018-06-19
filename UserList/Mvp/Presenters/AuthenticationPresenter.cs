@@ -38,6 +38,11 @@ namespace UserList.Mvp.Presenters
             }
         }
 
+        public void verification(object sendler,EventArgs e)
+        {
+            view.EnabledLogin(authenticationService.Validation(view.Username, view.Password));
+        }
+
         public void ShowRegistrationWindow(object sendler,EventArgs e)
         {
             mainPresenter.CreateRegisterPresenter().Run();
@@ -47,6 +52,7 @@ namespace UserList.Mvp.Presenters
         {
             view.Login += Authentication;
             view.Register += ShowRegistrationWindow;
+            view.Validation += verification;
         }
 
         public void Run()
