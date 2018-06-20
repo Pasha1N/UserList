@@ -16,7 +16,7 @@ namespace UserList.Mvp.Presenters
         private RegisterService registerService;
         private IViewUserList viewUserList;
 
-        public RegisterPresenter(IViewRegister view, IFactoryThePresenters mainPresenter, RegisterService registerService,IViewUserList viewUserList)
+        public RegisterPresenter(IViewRegister view, IFactoryThePresenters mainPresenter, RegisterService registerService, IViewUserList viewUserList)
         {
             this.mainPresenter = mainPresenter;
             this.view = view;
@@ -25,30 +25,36 @@ namespace UserList.Mvp.Presenters
             SubscribeToViewEvents();
         }
 
-        public void CheckIn(object sendler,EventArgs e)
+        public void CheckIn(object sendler, EventArgs e)
         {
-           if(view.Password==view.ConfirmPassword)
+            if (view.Password == view.ConfirmPassword)
             {
-                if(registerService.CheckIn(view.Username,view.Password, view.ConfirmPassword))
+                if (registerService.CheckIn(view.Username, view.Password, view.ConfirmPassword))
                 {
-                    viewUserList.Ru;
+                    viewUserList.Show();
                 }
             }
-           else
+            else
             {
                 view.ShowError("Passwords do not match");
             }
+        }
+
+        public void ClickButton_Cancel(object sendler, EventArgs e)
+        {
+            viewUserList.Close();
         }
 
         private void SubscribeToViewEvents()
         {
             view.Register += CheckIn;
             view.Validation += verification;
+            view.ClickButtonCancel += ClickButton_Cancel;
         }
 
         public void verification(object sendler, EventArgs e)
         {
-            if(registerService.Validation(view.Username,view.Password,view.ConfirmPassword))
+            if (registerService.Validation(view.Username, view.Password, view.ConfirmPassword))
             {
                 view.EnabledRegister(true);
             }
@@ -58,7 +64,7 @@ namespace UserList.Mvp.Presenters
             }
         }
 
-            public void Run()
+        public void Run()
         {
             view.Show();
         }

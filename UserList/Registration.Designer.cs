@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.registerButton = new System.Windows.Forms.Button();
-            this.loginButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.passwordtextBox = new System.Windows.Forms.TextBox();
@@ -55,15 +55,16 @@
             this.registerButton.UseVisualStyleBackColor = true;
             this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
             // 
-            // loginButton
+            // cancelButton
             // 
-            this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.loginButton.Location = new System.Drawing.Point(196, 95);
-            this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(80, 20);
-            this.loginButton.TabIndex = 15;
-            this.loginButton.Text = "Cancel";
-            this.loginButton.UseVisualStyleBackColor = true;
+            this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cancelButton.Location = new System.Drawing.Point(196, 95);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(80, 20);
+            this.cancelButton.TabIndex = 15;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // pictureBox1
             // 
@@ -158,7 +159,7 @@
             this.Controls.Add(this.confirmPasswordtextBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.registerButton);
-            this.Controls.Add(this.loginButton);
+            this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.passwordtextBox);
@@ -178,7 +179,7 @@
         #endregion
 
         private System.Windows.Forms.Button registerButton;
-        private System.Windows.Forms.Button loginButton;
+        private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox passwordtextBox;

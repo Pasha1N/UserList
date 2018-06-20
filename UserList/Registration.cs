@@ -28,6 +28,8 @@ namespace UserList
 
         public event EventHandler<EventArgs> Validation;
 
+        public event EventHandler<EventArgs> ClickButtonCancel;
+
         private void usernameTextBox_TextChanged(object sender, EventArgs e)
         {
             Validation?.Invoke(this, EventArgs.Empty);
@@ -41,6 +43,11 @@ namespace UserList
         private void confirmPasswordtextBox_TextChanged(object sender, EventArgs e)
         {
             Validation?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            ClickButtonCancel?.Invoke(this, EventArgs.Empty);
         }
 
         private void registerButton_Click(object sender, EventArgs e)

@@ -18,6 +18,8 @@ namespace UserList.Mvp.Views
 
         event EventHandler<EventArgs> Validation;
 
+        event EventHandler<EventArgs> ClickButtonCancel;
+
         void EnabledRegister(bool enabled);
 
         void ShowError(string message);
