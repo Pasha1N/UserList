@@ -11,7 +11,7 @@ using UserList.Mvp.Views;
 
 namespace UserList
 {
-    public partial class Registration : Form, IViewRegister
+    internal partial class Registration : Form, IViewRegister
     {
         public Registration()
         {

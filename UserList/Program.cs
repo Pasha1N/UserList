@@ -23,11 +23,11 @@ namespace UserList
 
             ApplicationContext applicationContext = new ApplicationContext();
             Authentication authentication = new Authentication(applicationContext);
-            UserList userList = new UserList(applicationContext);
-            UserPresenter userPresenter=new UserPresenter(userList);
             AuthenticationService authenticationService = new AuthenticationService();
             Registration registration = new Registration();
             RegisterService registerService = new RegisterService();
+            UserList userList = new UserList(applicationContext, registration, authentication);
+            UserPresenter userPresenter = new UserPresenter(userList);
             FactoryThePresenters factoryThePresenters = new FactoryThePresenters(registration, userList,registerService);
             AuthenticationPresenter authenticationPresenter = new AuthenticationPresenter(authentication, factoryThePresenters, authenticationService);
             authenticationPresenter.Run();

@@ -1,6 +1,6 @@
 ﻿namespace UserList
 {
-    partial class Registration
+   internal partial class Registration
     {
         /// <summary>
         /// Required designer variable.

@@ -36,13 +36,13 @@ namespace UserList.Mvp.Presenters
             }
             else
             {
-                view.ShowError("Passwords do not match");
+                view.ShowError("Confirmed password does not match");
             }
         }
 
         public void ClickButton_Cancel(object sendler, EventArgs e)
         {
-            viewUserList.Close();
+            view.Close();
         }
 
         private void SubscribeToViewEvents()

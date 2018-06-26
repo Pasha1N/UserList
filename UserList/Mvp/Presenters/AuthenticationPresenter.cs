@@ -40,7 +40,9 @@ namespace UserList.Mvp.Presenters
 
         public void verification(object sendler,EventArgs e)
         {
-            view.EnabledLogin(authenticationService.Validation(view.Username, view.Password));
+           // view.EnabledLogin(authenticationService.Validation(view.Username, view.Password));
+
+           
         }
 
         public void ShowRegistrationWindow(object sendler,EventArgs e)

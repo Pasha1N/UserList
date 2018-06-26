@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace UserList.Mvp.Views
 {
-    interface IViewAuthentication:IView
+   internal interface IViewAuthentication:IView
     {
         string Password { get; }
+
         string Username { get; }
 
         event EventHandler<EventArgs> Login;

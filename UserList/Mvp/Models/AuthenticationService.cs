@@ -6,27 +6,51 @@ using System.Threading.Tasks;
 
 namespace UserList.Mvp.Models
 {
-    class AuthenticationService //: IAuthenticationService
+   internal class AuthenticationService 
     {
         public bool Login(User user)
         {
             return Database.UserSearch(user);
         }
 
-        public bool Validation(string username, string password)
+        public bool PasswordValidation(string password)
         {
             bool successfulVerification = true;
 
-            if (username.Length<5)
-            {
-                successfulVerification = false;
-            }
-            else if(password.Length<1)
+            if (password.Length < 1)
             {
                 successfulVerification = false;
             }
 
             return successfulVerification;
         }
+
+        public bool UsernameValidation(string username)
+        {
+            bool successfulVerification = true;
+
+            if (username.Length < 5)
+            {
+                successfulVerification = false;
+            }
+
+            return successfulVerification;
+        }
+
+        //public bool Validation(string username, string password)
+        //{
+        //    bool successfulVerification = true;
+
+        //    if (username.Length<5)
+        //    {
+        //        successfulVerification = false;
+        //    }
+        //    else if(password.Length<1)
+        //    {
+        //        successfulVerification = false;
+        //    }
+
+        //    return successfulVerification;
+        //}
     }
 }

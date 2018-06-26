@@ -19,6 +19,7 @@ namespace UserList
         {
             this.context = context;
             InitializeComponent();
+            UsenamePicture.ErrorImage = 
         }
 
         public string Password => passwordTextBox.Text;
