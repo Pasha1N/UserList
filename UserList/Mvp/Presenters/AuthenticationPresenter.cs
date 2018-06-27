@@ -38,11 +38,21 @@ namespace UserList.Mvp.Presenters
             }
         }
 
-        public void verification(object sendler,EventArgs e)
+        public void verification(object sendler, EventArgs e)
         {
-           // view.EnabledLogin(authenticationService.Validation(view.Username, view.Password));
+  
+            view.PasswordSetPicture = authenticationService.PasswordValidation(view.Password);
 
-           
+            view.UsernameSetPicture = authenticationService.UsernameValidation(view.Username);
+
+            if(authenticationService.PasswordValidation(view.Password)&& authenticationService.UsernameValidation(view.Username))
+            {
+                view.EnabledLogin(true);
+            }
+            else
+            {
+                view.EnabledLogin(false);
+            }
         }
 
         public void ShowRegistrationWindow(object sendler,EventArgs e)

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UserList.Mvp.Views;
+using UserList.Properties;
 
 namespace UserList
 {
@@ -19,12 +20,30 @@ namespace UserList
         {
             this.context = context;
             InitializeComponent();
-            UsenamePicture.ErrorImage = 
+        }
+
+        public string Username => usernameTextBox.Text;
+
+        public bool UsernameSetPicture
+        {
+            set
+            {
+                if(value)
+                {
+                    usernamePicture.Image = value == true ? Resources.Correct : Resources.Incorrect;
+                }
+            }
         }
 
         public string Password => passwordTextBox.Text;
 
-        public string Username => usernameTextBox.Text;
+        public bool PasswordSetPicture
+        {
+            set
+            {
+                passwordPicture.Image = value == true ? Resources.Correct : Resources.Incorrect;
+            }
+        }
 
         public event EventHandler<EventArgs> Login;
 

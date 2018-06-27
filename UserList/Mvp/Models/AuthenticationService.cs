@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UserList.Mvp.Models
 {
-   internal class AuthenticationService 
+    internal class AuthenticationService
     {
         public bool Login(User user)
         {
@@ -36,21 +36,5 @@ namespace UserList.Mvp.Models
 
             return successfulVerification;
         }
-
-        //public bool Validation(string username, string password)
-        //{
-        //    bool successfulVerification = true;
-
-        //    if (username.Length<5)
-        //    {
-        //        successfulVerification = false;
-        //    }
-        //    else if(password.Length<1)
-        //    {
-        //        successfulVerification = false;
-        //    }
-
-        //    return successfulVerification;
-        //}
     }
 }

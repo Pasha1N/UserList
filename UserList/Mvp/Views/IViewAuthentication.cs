@@ -12,6 +12,10 @@ namespace UserList.Mvp.Views
 
         string Username { get; }
 
+        bool UsernameSetPicture { set; }
+
+        bool PasswordSetPicture { set; }
+
         event EventHandler<EventArgs> Login;
 
         event EventHandler<EventArgs> Register;

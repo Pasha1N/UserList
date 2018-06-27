@@ -32,12 +32,12 @@
             this.passwordLabel = new System.Windows.Forms.Label();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
-            this.PasswordPicture = new System.Windows.Forms.PictureBox();
-            this.UsenamePicture = new System.Windows.Forms.PictureBox();
+            this.passwordPicture = new System.Windows.Forms.PictureBox();
+            this.usernamePicture = new System.Windows.Forms.PictureBox();
             this.loginButton = new System.Windows.Forms.Button();
             this.registerButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.PasswordPicture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UsenamePicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passwordPicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usernamePicture)).BeginInit();
             this.SuspendLayout();
             // 
             // usernameLable
@@ -73,28 +73,28 @@
             this.passwordTextBox.TabIndex = 3;
             this.passwordTextBox.TextChanged += new System.EventHandler(this.passwordTextBox_TextChanged);
             // 
-            // PasswordPicture
+            // passwordPicture
             // 
-            this.PasswordPicture.Image = global::UserList.Properties.Resources.Incorrect;
-            this.PasswordPicture.Location = new System.Drawing.Point(245, 36);
-            this.PasswordPicture.Name = "PasswordPicture";
-            this.PasswordPicture.Size = new System.Drawing.Size(19, 20);
-            this.PasswordPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PasswordPicture.TabIndex = 6;
-            this.PasswordPicture.TabStop = false;
+            this.passwordPicture.Image = global::UserList.Properties.Resources.Incorrect;
+            this.passwordPicture.Location = new System.Drawing.Point(245, 36);
+            this.passwordPicture.Name = "passwordPicture";
+            this.passwordPicture.Size = new System.Drawing.Size(19, 20);
+            this.passwordPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.passwordPicture.TabIndex = 6;
+            this.passwordPicture.TabStop = false;
             // 
-            // UsenamePicture
+            // usernamePicture
             // 
-            this.UsenamePicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.UsenamePicture.ErrorImage = global::UserList.Properties.Resources.Incorrect;
-            this.UsenamePicture.Image = global::UserList.Properties.Resources.Incorrect;
-            this.UsenamePicture.InitialImage = global::UserList.Properties.Resources.Correct;
-            this.UsenamePicture.Location = new System.Drawing.Point(245, 10);
-            this.UsenamePicture.Name = "UsenamePicture";
-            this.UsenamePicture.Size = new System.Drawing.Size(19, 20);
-            this.UsenamePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.UsenamePicture.TabIndex = 5;
-            this.UsenamePicture.TabStop = false;
+            this.usernamePicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.usernamePicture.ErrorImage = global::UserList.Properties.Resources.Incorrect;
+            this.usernamePicture.Image = global::UserList.Properties.Resources.Incorrect;
+            this.usernamePicture.InitialImage = global::UserList.Properties.Resources.Correct;
+            this.usernamePicture.Location = new System.Drawing.Point(245, 10);
+            this.usernamePicture.Name = "usernamePicture";
+            this.usernamePicture.Size = new System.Drawing.Size(19, 20);
+            this.usernamePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.usernamePicture.TabIndex = 5;
+            this.usernamePicture.TabStop = false;
             // 
             // loginButton
             // 
@@ -126,16 +126,16 @@
             this.ClientSize = new System.Drawing.Size(276, 99);
             this.Controls.Add(this.registerButton);
             this.Controls.Add(this.loginButton);
-            this.Controls.Add(this.PasswordPicture);
-            this.Controls.Add(this.UsenamePicture);
+            this.Controls.Add(this.passwordPicture);
+            this.Controls.Add(this.usernamePicture);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.usernameLable);
             this.Name = "Authentication";
             this.Text = "Authentication";
-            ((System.ComponentModel.ISupportInitialize)(this.PasswordPicture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UsenamePicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passwordPicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usernamePicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,8 +147,8 @@
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.TextBox usernameTextBox;
         private System.Windows.Forms.TextBox passwordTextBox;
-        private System.Windows.Forms.PictureBox UsenamePicture;
-        private System.Windows.Forms.PictureBox PasswordPicture;
+        private System.Windows.Forms.PictureBox usernamePicture;
+        private System.Windows.Forms.PictureBox passwordPicture;
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Button registerButton;
     }
