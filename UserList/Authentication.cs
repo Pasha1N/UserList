@@ -22,7 +22,7 @@ namespace UserList
             InitializeComponent();
         }
 
-        public string Username => usernameTextBox.Text;
+        public string Username => usernameTextBox.Text; 
 
         public bool UsernameSetPicture
         {
