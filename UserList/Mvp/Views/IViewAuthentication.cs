@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,13 +9,13 @@ namespace UserList.Mvp.Views
 {
    internal interface IViewAuthentication:IView
     {
-        string Password { get; }
+        string Password { set; get; }
 
-        string Username { get; }
+        string Username { set; get; }
 
-        bool UsernameSetPicture { set; }
+        Image UsernameSetPicture { set; }
 
-        bool PasswordSetPicture { set; }
+        Image PasswordSetPicture { set; }
 
         event EventHandler<EventArgs> Login;
 

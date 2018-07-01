@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using UserList.AbstractFactory;
 using UserList.Mvp.Models;
 using UserList.Mvp.Views;
+using UserList.Properties;
 
 namespace UserList.Mvp.Presenters
 {
@@ -40,12 +41,12 @@ namespace UserList.Mvp.Presenters
 
         public void verification(object sendler, EventArgs e)
         {
-  
-            view.PasswordSetPicture = authenticationService.PasswordValidation(view.Password);
+            CheckingInputData checkingInput = new CheckingInputData();
 
-            view.UsernameSetPicture = authenticationService.UsernameValidation(view.Username);
+            view.PasswordSetPicture = checkingInput.PasswordValidation(view.Password) ? Resources.Correct : Resources.Incorrect;
+            view.UsernameSetPicture = checkingInput.UsernameValidation(view.Username) ? Resources.Correct : Resources.Incorrect;
 
-            if(authenticationService.PasswordValidation(view.Password)&& authenticationService.UsernameValidation(view.Username))
+            if (checkingInput.PasswordValidation(view.Password) && checkingInput.UsernameValidation(view.Username))
             {
                 view.EnabledLogin(true);
             }
@@ -57,6 +58,8 @@ namespace UserList.Mvp.Presenters
 
         public void ShowRegistrationWindow(object sendler,EventArgs e)
         {
+            view.Password = string.Empty;
+            view.Username = string.Empty;
             mainPresenter.CreateRegisterPresenter().Run();
         }
 

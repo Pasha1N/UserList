@@ -22,27 +22,26 @@ namespace UserList
             InitializeComponent();
         }
 
-        public string Username => usernameTextBox.Text; 
-
-        public bool UsernameSetPicture
+        public string Username
         {
-            set
-            {
-                if(value)
-                {
-                    usernamePicture.Image = value == true ? Resources.Correct : Resources.Incorrect;
-                }
-            }
+            get => usernameTextBox.Text;
+            set { usernameTextBox.Text = value; }
         }
 
-        public string Password => passwordTextBox.Text;
-
-        public bool PasswordSetPicture
+        public Image UsernameSetPicture
         {
-            set
-            {
-                passwordPicture.Image = value == true ? Resources.Correct : Resources.Incorrect;
-            }
+            set { usernamePicture.Image = value; }
+        }
+
+        public string Password
+        {
+            get => passwordTextBox.Text;
+            set { passwordTextBox.Text = value; }
+        }
+
+        public Image PasswordSetPicture
+        {
+            set { passwordPicture.Image = value; }
         }
 
         public event EventHandler<EventArgs> Login;

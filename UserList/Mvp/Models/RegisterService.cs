@@ -28,26 +28,6 @@ namespace UserList.Mvp.Models
             return successfulRegistration;
         }
 
-        public bool Validation(string username, string password, string confirmPassword)
-        {
-            bool successfulVerification = true;
-
-            if (username.Length < 5)
-            {
-                successfulVerification = false;
-            }
-            else if (password.Length < 1)
-            {
-                successfulVerification = false;
-            }
-            else if(confirmPassword.Length <1)
-            {
-                successfulVerification = false;
-            }
-
-            return successfulVerification;
-        }
-
         public void SavingData(string username, string password, string repeatPassword)
         {
                 User user = new User(username, password);

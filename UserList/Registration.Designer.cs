@@ -30,18 +30,18 @@
         {
             this.registerButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.passwordPicture = new System.Windows.Forms.PictureBox();
+            this.usernamePicture = new System.Windows.Forms.PictureBox();
             this.passwordtextBox = new System.Windows.Forms.TextBox();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.confirmPasswordtextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.confirmPasswordPicture = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.passwordPicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usernamePicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.confirmPasswordPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // registerButton
@@ -66,28 +66,28 @@
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
-            // pictureBox1
+            // passwordPicture
             // 
-            this.pictureBox1.Image = global::UserList.Properties.Resources.Incorrect;
-            this.pictureBox1.Location = new System.Drawing.Point(282, 43);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(19, 20);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
+            this.passwordPicture.Image = global::UserList.Properties.Resources.Incorrect;
+            this.passwordPicture.Location = new System.Drawing.Point(282, 43);
+            this.passwordPicture.Name = "passwordPicture";
+            this.passwordPicture.Size = new System.Drawing.Size(19, 20);
+            this.passwordPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.passwordPicture.TabIndex = 14;
+            this.passwordPicture.TabStop = false;
             // 
-            // pictureBox2
+            // usernamePicture
             // 
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox2.ErrorImage = global::UserList.Properties.Resources.Incorrect;
-            this.pictureBox2.Image = global::UserList.Properties.Resources.Incorrect;
-            this.pictureBox2.InitialImage = global::UserList.Properties.Resources.Correct;
-            this.pictureBox2.Location = new System.Drawing.Point(282, 17);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(19, 20);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 13;
-            this.pictureBox2.TabStop = false;
+            this.usernamePicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.usernamePicture.ErrorImage = global::UserList.Properties.Resources.Incorrect;
+            this.usernamePicture.Image = global::UserList.Properties.Resources.Incorrect;
+            this.usernamePicture.InitialImage = global::UserList.Properties.Resources.Correct;
+            this.usernamePicture.Location = new System.Drawing.Point(282, 17);
+            this.usernamePicture.Name = "usernamePicture";
+            this.usernamePicture.Size = new System.Drawing.Size(19, 20);
+            this.usernamePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.usernamePicture.TabIndex = 13;
+            this.usernamePicture.TabStop = false;
             // 
             // passwordtextBox
             // 
@@ -140,37 +140,37 @@
             this.label3.TabIndex = 17;
             this.label3.Text = "Confirm password";
             // 
-            // pictureBox3
+            // confirmPasswordPicture
             // 
-            this.pictureBox3.Image = global::UserList.Properties.Resources.Incorrect;
-            this.pictureBox3.Location = new System.Drawing.Point(282, 69);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(19, 20);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 19;
-            this.pictureBox3.TabStop = false;
+            this.confirmPasswordPicture.Image = global::UserList.Properties.Resources.Incorrect;
+            this.confirmPasswordPicture.Location = new System.Drawing.Point(282, 69);
+            this.confirmPasswordPicture.Name = "confirmPasswordPicture";
+            this.confirmPasswordPicture.Size = new System.Drawing.Size(19, 20);
+            this.confirmPasswordPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.confirmPasswordPicture.TabIndex = 19;
+            this.confirmPasswordPicture.TabStop = false;
             // 
             // Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(362, 209);
-            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.confirmPasswordPicture);
             this.Controls.Add(this.confirmPasswordtextBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.registerButton);
             this.Controls.Add(this.cancelButton);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.passwordPicture);
+            this.Controls.Add(this.usernamePicture);
             this.Controls.Add(this.passwordtextBox);
             this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Registration";
             this.Text = "Registration";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passwordPicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usernamePicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.confirmPasswordPicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,14 +180,14 @@
 
         private System.Windows.Forms.Button registerButton;
         private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox passwordPicture;
+        private System.Windows.Forms.PictureBox usernamePicture;
         private System.Windows.Forms.TextBox passwordtextBox;
         private System.Windows.Forms.TextBox usernameTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox confirmPasswordtextBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox confirmPasswordPicture;
     }
 }

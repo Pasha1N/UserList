@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using UserList.AbstractFactory;
 using UserList.Mvp.Models;
 using UserList.Mvp.Views;
+using UserList.Properties;
 
 namespace UserList.Mvp.Presenters
 {
@@ -15,6 +16,7 @@ namespace UserList.Mvp.Presenters
         private readonly IFactoryThePresenters mainPresenter;
         private RegisterService registerService;
         private IViewUserList viewUserList;
+        private CheckingInputData checkingInput = new CheckingInputData();
 
         public RegisterPresenter(IViewRegister view, IFactoryThePresenters mainPresenter, RegisterService registerService, IViewUserList viewUserList)
         {
@@ -27,9 +29,9 @@ namespace UserList.Mvp.Presenters
 
         public void CheckIn(object sendler, EventArgs e)
         {
-            if (view.Password == view.ConfirmPassword)
+            if (view.Password == view.ConfirmedPassword)
             {
-                if (registerService.CheckIn(view.Username, view.Password, view.ConfirmPassword))
+                if (registerService.CheckIn(view.Username, view.Password, view.ConfirmedPassword))
                 {
                     viewUserList.Show();
                 }
@@ -43,6 +45,9 @@ namespace UserList.Mvp.Presenters
         public void ClickButton_Cancel(object sendler, EventArgs e)
         {
             view.Close();
+            view.ConfirmedPassword = string.Empty;
+            view.Password = string.Empty;
+            view.Username = string.Empty;
         }
 
         private void SubscribeToViewEvents()
@@ -54,7 +59,18 @@ namespace UserList.Mvp.Presenters
 
         public void verification(object sendler, EventArgs e)
         {
-            if (registerService.Validation(view.Username, view.Password, view.ConfirmPassword))
+            view.PasswordSetPicture = checkingInput.PasswordValidation(view.Password)
+                ? Resources.Correct : Resources.Incorrect;
+
+            view.UsernameSetPicture = checkingInput.UsernameValidation(view.Username)
+                ? Resources.Correct : Resources.Incorrect;
+
+           view.ConfirmedPasswordSetPicture = checkingInput.CheckPasswordConfirmation(view.Password,view.ConfirmedPassword)
+                ? Resources.Correct : Resources.Incorrect;
+
+            if (checkingInput.PasswordValidation(view.Password) &&
+                checkingInput.UsernameValidation(view.Username) &&
+                checkingInput.CheckPasswordConfirmation(view.Password, view.ConfirmedPassword))
             {
                 view.EnabledRegister(true);
             }

@@ -18,11 +18,38 @@ namespace UserList
             InitializeComponent();
         }
 
-        public string Password => passwordtextBox.Text;
+        public string Password
+        {
+            get => passwordtextBox.Text;
+            set { passwordtextBox.Text = value; }
+        }
 
-        public string ConfirmPassword => confirmPasswordtextBox.Text;
+        public Image PasswordSetPicture
+        {
+            set { passwordPicture.Image = value; }
+        }
 
-        public string Username => usernameTextBox.Text;
+        public string ConfirmedPassword
+        {
+            get => confirmPasswordtextBox.Text;
+            set { confirmPasswordtextBox.Text = value; }
+        }
+
+        public Image ConfirmedPasswordSetPicture
+        {
+            set { confirmPasswordPicture.Image = value; }
+        }
+
+        public string Username
+        {
+            get => usernameTextBox.Text;
+            set { usernameTextBox.Text = value; }
+        }
+
+        public Image UsernameSetPicture
+        {
+            set { usernamePicture.Image = value; }
+        }
 
         public event EventHandler<EventArgs> Register;
 

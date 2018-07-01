@@ -24,7 +24,6 @@ namespace UserList
             this.context = context;
             this.registration = registration;
             this.authentication = authentication;
-            //Initialization();
         }
 
         public new void Show()

@@ -55,6 +55,7 @@
     </Compile>
     <Compile Include="Database.cs" />
     <Compile Include="Mvp\Models\AuthenticationService.cs" />
+    <Compile Include="Mvp\Models\CheckingInputData.cs" />
     <Compile Include="Mvp\Models\RegisterService.cs" />
     <Compile Include="Mvp\Models\User.cs" />
     <Compile Include="Mvp\Presenters\IPresenter.cs" />
@@ -113,13 +114,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <None Include="Resources\859417.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Incorrect.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Correct.png" />
+    <None Include="Resources\correct.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
