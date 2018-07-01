@@ -10,7 +10,7 @@ using UserList.Mvp.Views;
 
 namespace UserList
 {
-    static class Program
+    internal static class Program
     {
         /// <summary>
         /// Главная точка входа для приложения.
@@ -21,6 +21,7 @@ namespace UserList
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            Database.Initialisetion();
             ApplicationContext applicationContext = new ApplicationContext();
             Authentication authentication = new Authentication(applicationContext);
             AuthenticationService authenticationService = new AuthenticationService();
@@ -28,8 +29,9 @@ namespace UserList
             RegisterService registerService = new RegisterService();
             UserList userList = new UserList(applicationContext, registration, authentication);
             UserPresenter userPresenter = new UserPresenter(userList);
-            FactoryThePresenters factoryThePresenters = new FactoryThePresenters(registration, userList,registerService);
+            FactoryThePresenters factoryThePresenters = new FactoryThePresenters(registration, userList, registerService);
             AuthenticationPresenter authenticationPresenter = new AuthenticationPresenter(authentication, factoryThePresenters, authenticationService);
+
             authenticationPresenter.Run();
         }
     }

@@ -39,7 +39,7 @@
             this.listUsers.Name = "listUsers";
             this.listUsers.Size = new System.Drawing.Size(316, 394);
             this.listUsers.TabIndex = 0;
-            this.listUsers.SelectedIndexChanged += new System.EventHandler(this.listUsers_SelectedIndexChanged);
+            this.listUsers.SelectedIndexChanged += new System.EventHandler(this.ListUsers_SelectedIndexChanged);
             // 
             // deleteButton
             // 
@@ -51,7 +51,7 @@
             this.deleteButton.TabIndex = 1;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            this.deleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // UserList
             // 

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using UserList.Mvp.Models;
 using UserList.Mvp.Views;
@@ -14,9 +7,9 @@ namespace UserList
 {
     internal partial class UserList : Form, IViewUserList
     {
+        private IViewAuthentication authentication;
         private readonly ApplicationContext context;
         private IViewRegister registration;
-        private IViewAuthentication authentication;
 
         public UserList(ApplicationContext context, IViewRegister registration, Authentication authentication)
         {
@@ -26,14 +19,15 @@ namespace UserList
             this.authentication = authentication;
         }
 
-        public new void Show()
+        private void DeleteButton_Click(object sender, EventArgs e)
         {
-            Initialization();
+            Database.DeleteUser(listUsers.SelectedItem.ToString());
+            listUsers.Items.Remove(listUsers.SelectedItem);
+        }
 
-            context.MainForm = this;
-            registration.Close();
-            authentication.Close();
-            base.Show();
+        private void ListUsers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            deleteButton.Enabled = true;
         }
 
         public void Initialization()
@@ -44,15 +38,14 @@ namespace UserList
             }
         }
 
-        private void deleteButton_Click(object sender, EventArgs e)
+        public new void Show()
         {
-            Database.DeleteUser(listUsers.SelectedItem.ToString());
-            listUsers.Items.Remove(listUsers.SelectedItem);
-        }
+            Initialization();
 
-        private void listUsers_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            deleteButton.Enabled = true;
+            context.MainForm = this;
+            registration.Close();
+            authentication.Close();
+            base.Show();
         }
     }
 }

@@ -1,21 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UserList.Mvp.Views
 {
-   internal interface IViewAuthentication:IView
+    internal interface IViewAuthentication : IView
     {
         string Password { set; get; }
+
+        Image PasswordSetPicture { set; }
 
         string Username { set; get; }
 
         Image UsernameSetPicture { set; }
-
-        Image PasswordSetPicture { set; }
 
         event EventHandler<EventArgs> Login;
 
@@ -24,7 +20,7 @@ namespace UserList.Mvp.Views
         event EventHandler<EventArgs> Validation;
 
         void EnabledLogin(bool enabled);
-        
+
         void ShowError(string message);
     }
 }

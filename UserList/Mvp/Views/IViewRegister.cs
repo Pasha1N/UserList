@@ -1,14 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UserList.Mvp.Views
 {
     internal interface IViewRegister : IView
     {
+        string ConfirmedPassword { set; get; }
+
+        Image ConfirmedPasswordSetPicture { set; }
+
         string Password { set; get; }
 
         Image PasswordSetPicture { set; }
@@ -16,10 +16,6 @@ namespace UserList.Mvp.Views
         string Username { set; get; }
 
         Image UsernameSetPicture { set; }
-
-        string ConfirmedPassword { set; get; }
-
-        Image ConfirmedPasswordSetPicture { set; }
 
         event EventHandler<EventArgs> Register;
 

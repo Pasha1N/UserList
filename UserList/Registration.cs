@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using UserList.Mvp.Views;
 
@@ -16,17 +10,6 @@ namespace UserList
         public Registration()
         {
             InitializeComponent();
-        }
-
-        public string Password
-        {
-            get => passwordtextBox.Text;
-            set { passwordtextBox.Text = value; }
-        }
-
-        public Image PasswordSetPicture
-        {
-            set { passwordPicture.Image = value; }
         }
 
         public string ConfirmedPassword
@@ -40,6 +23,17 @@ namespace UserList
             set { confirmPasswordPicture.Image = value; }
         }
 
+        public string Password
+        {
+            get => passwordtextBox.Text;
+            set { passwordtextBox.Text = value; }
+        }
+
+        public Image PasswordSetPicture
+        {
+            set { passwordPicture.Image = value; }
+        }
+
         public string Username
         {
             get => usernameTextBox.Text;
@@ -51,35 +45,35 @@ namespace UserList
             set { usernamePicture.Image = value; }
         }
 
+        public event EventHandler<EventArgs> ClickButtonCancel;
+
         public event EventHandler<EventArgs> Register;
 
         public event EventHandler<EventArgs> Validation;
 
-        public event EventHandler<EventArgs> ClickButtonCancel;
-
-        private void usernameTextBox_TextChanged(object sender, EventArgs e)
-        {
-            Validation?.Invoke(this, EventArgs.Empty);
-        }
-
-        private void passwordtextBox_TextChanged(object sender, EventArgs e)
-        {
-            Validation?.Invoke(this, EventArgs.Empty);
-        }
-
-        private void confirmPasswordtextBox_TextChanged(object sender, EventArgs e)
-        {
-            Validation?.Invoke(this, EventArgs.Empty);
-        }
-
-        private void cancelButton_Click(object sender, EventArgs e)
+        private void CancelButton_Click(object sender, EventArgs e)
         {
             ClickButtonCancel?.Invoke(this, EventArgs.Empty);
         }
 
-        private void registerButton_Click(object sender, EventArgs e)
+        private void ConfirmPasswordtextBox_TextChanged(object sender, EventArgs e)
+        {
+            Validation?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void PasswordtextBox_TextChanged(object sender, EventArgs e)
+        {
+            Validation?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void RegisterButton_Click(object sender, EventArgs e)
         {
             Register?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void UsernameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Validation?.Invoke(this, EventArgs.Empty);
         }
 
         public void EnabledRegister(bool enabled)

@@ -63,7 +63,7 @@
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(169, 20);
             this.usernameTextBox.TabIndex = 2;
-            this.usernameTextBox.TextChanged += new System.EventHandler(this.usernameTextBox_TextChanged);
+            this.usernameTextBox.TextChanged += new System.EventHandler(this.UsernameTextBox_TextChanged);
             // 
             // passwordTextBox
             // 
@@ -71,7 +71,7 @@
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(169, 20);
             this.passwordTextBox.TabIndex = 3;
-            this.passwordTextBox.TextChanged += new System.EventHandler(this.passwordTextBox_TextChanged);
+            this.passwordTextBox.TextChanged += new System.EventHandler(this.PasswordTextBox_TextChanged);
             // 
             // passwordPicture
             // 
@@ -106,7 +106,7 @@
             this.loginButton.TabIndex = 7;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = true;
-            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            this.loginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
             // registerButton
             // 
@@ -117,7 +117,7 @@
             this.registerButton.TabIndex = 8;
             this.registerButton.Text = "Register";
             this.registerButton.UseVisualStyleBackColor = true;
-            this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
+            this.registerButton.Click += new System.EventHandler(this.RegisterButton_Click);
             // 
             // Authentication
             // 

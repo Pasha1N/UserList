@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UserList.AbstractFactory;
 using UserList.Mvp.Models;
 using UserList.Mvp.Views;
@@ -10,13 +6,13 @@ using UserList.Properties;
 
 namespace UserList.Mvp.Presenters
 {
-    class RegisterPresenter : IPresenter
+    internal class RegisterPresenter : IPresenter
     {
-        private readonly IViewRegister view;
+        private CheckingInputData checkingInput = new CheckingInputData();
         private readonly IFactoryThePresenters mainPresenter;
         private RegisterService registerService;
+        private readonly IViewRegister view;
         private IViewUserList viewUserList;
-        private CheckingInputData checkingInput = new CheckingInputData();
 
         public RegisterPresenter(IViewRegister view, IFactoryThePresenters mainPresenter, RegisterService registerService, IViewUserList viewUserList)
         {
@@ -50,6 +46,11 @@ namespace UserList.Mvp.Presenters
             view.Username = string.Empty;
         }
 
+        public void Run()
+        {
+            view.Show();
+        }
+
         private void SubscribeToViewEvents()
         {
             view.Register += CheckIn;
@@ -65,8 +66,8 @@ namespace UserList.Mvp.Presenters
             view.UsernameSetPicture = checkingInput.UsernameValidation(view.Username)
                 ? Resources.Correct : Resources.Incorrect;
 
-           view.ConfirmedPasswordSetPicture = checkingInput.CheckPasswordConfirmation(view.Password,view.ConfirmedPassword)
-                ? Resources.Correct : Resources.Incorrect;
+            view.ConfirmedPasswordSetPicture = checkingInput.CheckPasswordConfirmation(view.Password, view.ConfirmedPassword)
+                 ? Resources.Correct : Resources.Incorrect;
 
             if (checkingInput.PasswordValidation(view.Password) &&
                 checkingInput.UsernameValidation(view.Username) &&
@@ -79,11 +80,5 @@ namespace UserList.Mvp.Presenters
                 view.EnabledRegister(false);
             }
         }
-
-        public void Run()
-        {
-            view.Show();
-        }
-
     }
 }

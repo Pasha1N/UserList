@@ -53,7 +53,7 @@
             this.registerButton.TabIndex = 16;
             this.registerButton.Text = "Register";
             this.registerButton.UseVisualStyleBackColor = true;
-            this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
+            this.registerButton.Click += new System.EventHandler(this.RegisterButton_Click);
             // 
             // cancelButton
             // 
@@ -64,7 +64,7 @@
             this.cancelButton.TabIndex = 15;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
-            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // passwordPicture
             // 
@@ -95,7 +95,7 @@
             this.passwordtextBox.Name = "passwordtextBox";
             this.passwordtextBox.Size = new System.Drawing.Size(169, 20);
             this.passwordtextBox.TabIndex = 12;
-            this.passwordtextBox.TextChanged += new System.EventHandler(this.passwordtextBox_TextChanged);
+            this.passwordtextBox.TextChanged += new System.EventHandler(this.PasswordtextBox_TextChanged);
             // 
             // usernameTextBox
             // 
@@ -103,7 +103,7 @@
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(169, 20);
             this.usernameTextBox.TabIndex = 11;
-            this.usernameTextBox.TextChanged += new System.EventHandler(this.usernameTextBox_TextChanged);
+            this.usernameTextBox.TextChanged += new System.EventHandler(this.UsernameTextBox_TextChanged);
             // 
             // label2
             // 
@@ -129,7 +129,7 @@
             this.confirmPasswordtextBox.Name = "confirmPasswordtextBox";
             this.confirmPasswordtextBox.Size = new System.Drawing.Size(169, 20);
             this.confirmPasswordtextBox.TabIndex = 18;
-            this.confirmPasswordtextBox.TextChanged += new System.EventHandler(this.confirmPasswordtextBox_TextChanged);
+            this.confirmPasswordtextBox.TextChanged += new System.EventHandler(this.ConfirmPasswordtextBox_TextChanged);
             // 
             // label3
             // 

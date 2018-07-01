@@ -1,13 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace UserList.Mvp.Models
+﻿namespace UserList.Mvp.Models
 {
     internal class CheckingInputData
     {
+        public bool CheckPasswordConfirmation(string password, string confirmedPassword)
+        {
+            bool successfulVerification = false;
+
+            if (confirmedPassword == password && password.Length > 0)
+            {
+                successfulVerification = true;
+            }
+
+            return successfulVerification;
+        }
+
         public bool PasswordValidation(string password)
         {
             bool successfulVerification = true;
@@ -27,18 +33,6 @@ namespace UserList.Mvp.Models
             if (username.Length < 5)
             {
                 successfulVerification = false;
-            }
-
-            return successfulVerification;
-        }
-
-        public bool CheckPasswordConfirmation(string password, string confirmedPassword)
-        {
-            bool successfulVerification = false;
-
-            if (confirmedPassword == password&&password.Length>0)
-            {
-                successfulVerification = true;
             }
 
             return successfulVerification;
