@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using UserList.AbstractFactory;
-using UserList.Mvp.Models;
-using UserList.Mvp.Presenters;
-using UserList.Mvp.Views;
+using UserList.Date.AbstractFactory;
+using UserList.Date.Mvp.Models;
+using UserList.Date.Mvp.Presenters;
+using UserList.Date.Mvp.Views;
 
-namespace UserList
+namespace UserList.Date
 {
     internal static class Program
     {

@@ -1,4 +1,4 @@
-﻿namespace UserList
+﻿namespace UserList.Date
 {
     partial class Authentication
     {
@@ -75,7 +75,7 @@
             // 
             // passwordPicture
             // 
-            this.passwordPicture.Image = global::UserList.Properties.Resources.Incorrect;
+            this.passwordPicture.Image = global::UserList.Date.Properties.Resources.Incorrect;
             this.passwordPicture.Location = new System.Drawing.Point(245, 36);
             this.passwordPicture.Name = "passwordPicture";
             this.passwordPicture.Size = new System.Drawing.Size(19, 20);
@@ -86,9 +86,9 @@
             // usernamePicture
             // 
             this.usernamePicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.usernamePicture.ErrorImage = global::UserList.Properties.Resources.Incorrect;
-            this.usernamePicture.Image = global::UserList.Properties.Resources.Incorrect;
-            this.usernamePicture.InitialImage = global::UserList.Properties.Resources.Correct;
+            this.usernamePicture.ErrorImage = global::UserList.Date.Properties.Resources.Incorrect;
+            this.usernamePicture.Image = global::UserList.Date.Properties.Resources.Incorrect;
+            this.usernamePicture.InitialImage = global::UserList.Date.Properties.Resources.Correct;
             this.usernamePicture.Location = new System.Drawing.Point(245, 10);
             this.usernamePicture.Name = "usernamePicture";
             this.usernamePicture.Size = new System.Drawing.Size(19, 20);

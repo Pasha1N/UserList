@@ -1,4 +1,4 @@
-﻿namespace UserList.Mvp.Presenters
+﻿namespace UserList.Date.Mvp.Presenters
 {
     internal interface IPresenter
     {

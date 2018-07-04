@@ -1,4 +1,4 @@
-﻿namespace UserList.Mvp.Views
+﻿namespace UserList.Date.Mvp.Views
 {
     internal interface IView
     {

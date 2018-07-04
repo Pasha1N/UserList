@@ -53,7 +53,7 @@
     <Compile Include="Authentication.Designer.cs">
       <DependentUpon>Authentication.cs</DependentUpon>
     </Compile>
-    <Compile Include="Data1\Database.cs" />
+    <Compile Include="Data\Database.cs" />
     <Compile Include="Mvp\Models\AuthenticationService.cs" />
     <Compile Include="Mvp\Models\CheckingInputData.cs" />
     <Compile Include="Mvp\Models\RegisterService.cs" />
@@ -113,7 +113,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Data1\Users.xml" />
+    <Content Include="Data\Users.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Incorrect.png" />

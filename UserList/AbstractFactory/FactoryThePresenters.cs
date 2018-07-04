@@ -1,8 +1,8 @@
-﻿using UserList.Mvp.Models;
-using UserList.Mvp.Presenters;
-using UserList.Mvp.Views;
+﻿using UserList.Date.Mvp.Models;
+using UserList.Date.Mvp.Presenters;
+using UserList.Date.Mvp.Views;
 
-namespace UserList.AbstractFactory
+namespace UserList.Date.AbstractFactory
 {
     internal class FactoryThePresenters : IFactoryThePresenters
     {

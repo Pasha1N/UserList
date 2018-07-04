@@ -1,6 +1,6 @@
-﻿using UserList.Mvp.Presenters;
+﻿using UserList.Date.Mvp.Presenters;
 
-namespace UserList.AbstractFactory
+namespace UserList.Date.AbstractFactory
 {
     internal interface IFactoryThePresenters
     {

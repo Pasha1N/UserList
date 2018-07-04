@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using UserList.Mvp.Views;
+using UserList.Date.Mvp.Views;
 
-namespace UserList
+namespace UserList.Date
 {
     internal partial class Authentication : Form, IViewAuthentication
     {

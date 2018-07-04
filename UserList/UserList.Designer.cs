@@ -1,4 +1,4 @@
-﻿namespace UserList
+﻿namespace UserList.Date
 {
     partial class UserList
     {

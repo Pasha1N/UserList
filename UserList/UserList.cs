@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
-using UserList.Mvp.Models;
-using UserList.Mvp.Views;
+using UserList.Date.Mvp.Models;
+using UserList.Date.Mvp.Views;
 
-namespace UserList
+namespace UserList.Date
 {
     internal partial class UserList : Form, IViewUserList
     {

@@ -1,10 +1,10 @@
 ﻿using System;
-using UserList.AbstractFactory;
-using UserList.Mvp.Models;
-using UserList.Mvp.Views;
-using UserList.Properties;
+using UserList.Date.AbstractFactory;
+using UserList.Date.Mvp.Models;
+using UserList.Date.Mvp.Views;
+using UserList.Date.Properties;
 
-namespace UserList.Mvp.Presenters
+namespace UserList.Date.Mvp.Presenters
 {
     internal class RegisterPresenter : IPresenter
     {
