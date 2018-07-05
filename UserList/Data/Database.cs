@@ -13,35 +13,17 @@ namespace UserList.Date
 
         static public void AddUser(User user)
         {
-            // XDocument xmlDocument = new XDocument();
-            //  xmlDocument.Load(@"../../Data/Users.xml");
-            // for (int i = 0; i < 10; i++)
-            //  {
-            // if (xmlDocument.Root.Name == "users")
-            // {
-            // xmlDocument.Root.Add(new XElement("olea", new XAttribute("years", 23)));
-            //    xmlDocument.AddAfterSelf(new XElement("olea", new XAttribute("years", 23)));
-            // }
-            //  }
-
-            //   XDocument xmlDocument = new XDocument(new XDeclaration("0.1", "utf-8", "yes"), new XElement("users"));
-            //  xmlDocument.Root.Add(new XElement("olea", new XAttribute("years", 23)));
-            //   xmlDocument.Save(Path.Combine(Environment.CurrentDirectory, "Users.xml"));
+            XmlDocument xmlDocument = new XmlDocument();
+              xmlDocument.Load(@"../../Data/Users.xml");
 
 
-            //  XmlDocument document = new XmlDocument();
-            // if (document.== "users")
-            // {
-            // }
-            // xmlDocument.AddAfterSelf(new XElement("olea", new XAttribute("years", 23));
+           XmlElement xmlElement=xmlDocument.CreateElement("sfsadf");
 
-            // xmlDocument.Save(Path.Combine(Environment.CurrentDirectory, " Users.xml" ));
+            xmlElement.Attributes.Append(xmlDocument.CreateAttribute("name"));
+            xmlDocument.AppendChild(xmlElement);
+            xmlDocument.Save(Path.Combine(Environment.CurrentDirectory, " Users.xml" ));
 
-          //  using (XmlWriter xmlWriter = XmlWriter("sdfs"))
-           // {
-
-           // }
-
+        
 
 
 
@@ -69,6 +51,18 @@ namespace UserList.Date
 
         static public void Initialisetion()
         {
+            XmlDocument xmlDocument = new XmlDocument();
+            xmlDocument.Load(@"../../Data/Users.xml");
+
+
+            XmlElement xmlElement = xmlDocument.CreateElement("sfsadf");
+            XmlNodeList nodeList = xmlDocument.DocumentElement.ChildNodes;
+
+          if(  xmlDocument.DocumentElement.Name=="users")
+            {
+                xmlDocument.DocumentElement.AppendChild(xmlElement);
+                xmlDocument.Save(Path.Combine(Environment.CurrentDirectory, " Users.xml"));
+            }
         
         }
 
