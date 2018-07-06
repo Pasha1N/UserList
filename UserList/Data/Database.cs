@@ -9,6 +9,8 @@ namespace UserList.Date
 {
     internal static class Database
     {
+        private const string Filename = @"../../Data/Users.xml";
+
         private static IList<User> membersList = new List<User>();
 
         static public void AddUser(User user)
@@ -22,10 +24,6 @@ namespace UserList.Date
             xmlElement.Attributes.Append(xmlDocument.CreateAttribute("name"));
             xmlDocument.AppendChild(xmlElement);
             xmlDocument.Save(Path.Combine(Environment.CurrentDirectory, " Users.xml" ));
-
-        
-
-
 
 
 
@@ -52,18 +50,16 @@ namespace UserList.Date
         static public void Initialisetion()
         {
             XmlDocument xmlDocument = new XmlDocument();
-            xmlDocument.Load(@"../../Data/Users.xml");
-
+            xmlDocument.Load(Filename);
 
             XmlElement xmlElement = xmlDocument.CreateElement("sfsadf");
             XmlNodeList nodeList = xmlDocument.DocumentElement.ChildNodes;
 
-          if(  xmlDocument.DocumentElement.Name=="users")
+            if (xmlDocument.DocumentElement.Name == "users")
             {
                 xmlDocument.DocumentElement.AppendChild(xmlElement);
-                xmlDocument.Save(Path.Combine(Environment.CurrentDirectory, " Users.xml"));
+                xmlDocument.Save(Filename);
             }
-        
         }
 
         static public bool UserSearch(User user)
