@@ -62,7 +62,7 @@
             this.usernameTextBox.Location = new System.Drawing.Point(70, 10);
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(169, 20);
-            this.usernameTextBox.TabIndex = 2;
+            this.usernameTextBox.TabIndex = 1;
             this.usernameTextBox.TextChanged += new System.EventHandler(this.UsernameTextBox_TextChanged);
             // 
             // passwordTextBox
@@ -70,12 +70,12 @@
             this.passwordTextBox.Location = new System.Drawing.Point(70, 36);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(169, 20);
-            this.passwordTextBox.TabIndex = 3;
+            this.passwordTextBox.TabIndex = 2;
+            this.passwordTextBox.UseSystemPasswordChar = true;
             this.passwordTextBox.TextChanged += new System.EventHandler(this.PasswordTextBox_TextChanged);
             // 
             // passwordPicture
             // 
-            this.passwordPicture.Image = global::UserList.Date.Properties.Resources.Incorrect;
             this.passwordPicture.Location = new System.Drawing.Point(245, 36);
             this.passwordPicture.Name = "passwordPicture";
             this.passwordPicture.Size = new System.Drawing.Size(19, 20);
@@ -86,9 +86,6 @@
             // usernamePicture
             // 
             this.usernamePicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.usernamePicture.ErrorImage = global::UserList.Date.Properties.Resources.Incorrect;
-            this.usernamePicture.Image = global::UserList.Date.Properties.Resources.Incorrect;
-            this.usernamePicture.InitialImage = global::UserList.Date.Properties.Resources.Correct;
             this.usernamePicture.Location = new System.Drawing.Point(245, 10);
             this.usernamePicture.Name = "usernamePicture";
             this.usernamePicture.Size = new System.Drawing.Size(19, 20);
@@ -103,7 +100,7 @@
             this.loginButton.Location = new System.Drawing.Point(156, 65);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(80, 20);
-            this.loginButton.TabIndex = 7;
+            this.loginButton.TabIndex = 3;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = true;
             this.loginButton.Click += new System.EventHandler(this.LoginButton_Click);
@@ -114,7 +111,7 @@
             this.registerButton.Location = new System.Drawing.Point(70, 65);
             this.registerButton.Name = "registerButton";
             this.registerButton.Size = new System.Drawing.Size(80, 20);
-            this.registerButton.TabIndex = 8;
+            this.registerButton.TabIndex = 4;
             this.registerButton.Text = "Register";
             this.registerButton.UseVisualStyleBackColor = true;
             this.registerButton.Click += new System.EventHandler(this.RegisterButton_Click);

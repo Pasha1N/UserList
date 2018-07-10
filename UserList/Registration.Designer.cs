@@ -50,7 +50,7 @@
             this.registerButton.Location = new System.Drawing.Point(110, 95);
             this.registerButton.Name = "registerButton";
             this.registerButton.Size = new System.Drawing.Size(80, 20);
-            this.registerButton.TabIndex = 16;
+            this.registerButton.TabIndex = 4;
             this.registerButton.Text = "Register";
             this.registerButton.UseVisualStyleBackColor = true;
             this.registerButton.Click += new System.EventHandler(this.RegisterButton_Click);
@@ -61,14 +61,13 @@
             this.cancelButton.Location = new System.Drawing.Point(196, 95);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(80, 20);
-            this.cancelButton.TabIndex = 15;
+            this.cancelButton.TabIndex = 5;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // passwordPicture
             // 
-            this.passwordPicture.Image = global::UserList.Date.Properties.Resources.Incorrect;
             this.passwordPicture.Location = new System.Drawing.Point(282, 43);
             this.passwordPicture.Name = "passwordPicture";
             this.passwordPicture.Size = new System.Drawing.Size(19, 20);
@@ -79,9 +78,6 @@
             // usernamePicture
             // 
             this.usernamePicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.usernamePicture.ErrorImage = global::UserList.Date.Properties.Resources.Incorrect;
-            this.usernamePicture.Image = global::UserList.Date.Properties.Resources.Incorrect;
-            this.usernamePicture.InitialImage = global::UserList.Date.Properties.Resources.Correct;
             this.usernamePicture.Location = new System.Drawing.Point(282, 17);
             this.usernamePicture.Name = "usernamePicture";
             this.usernamePicture.Size = new System.Drawing.Size(19, 20);
@@ -94,7 +90,8 @@
             this.passwordtextBox.Location = new System.Drawing.Point(107, 43);
             this.passwordtextBox.Name = "passwordtextBox";
             this.passwordtextBox.Size = new System.Drawing.Size(169, 20);
-            this.passwordtextBox.TabIndex = 12;
+            this.passwordtextBox.TabIndex = 2;
+            this.passwordtextBox.UseSystemPasswordChar = true;
             this.passwordtextBox.TextChanged += new System.EventHandler(this.PasswordtextBox_TextChanged);
             // 
             // usernameTextBox
@@ -102,7 +99,7 @@
             this.usernameTextBox.Location = new System.Drawing.Point(107, 17);
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(169, 20);
-            this.usernameTextBox.TabIndex = 11;
+            this.usernameTextBox.TabIndex = 1;
             this.usernameTextBox.TextChanged += new System.EventHandler(this.UsernameTextBox_TextChanged);
             // 
             // label2
@@ -128,7 +125,8 @@
             this.confirmPasswordtextBox.Location = new System.Drawing.Point(107, 69);
             this.confirmPasswordtextBox.Name = "confirmPasswordtextBox";
             this.confirmPasswordtextBox.Size = new System.Drawing.Size(169, 20);
-            this.confirmPasswordtextBox.TabIndex = 18;
+            this.confirmPasswordtextBox.TabIndex = 3;
+            this.confirmPasswordtextBox.UseSystemPasswordChar = true;
             this.confirmPasswordtextBox.TextChanged += new System.EventHandler(this.ConfirmPasswordtextBox_TextChanged);
             // 
             // label3
@@ -142,7 +140,6 @@
             // 
             // confirmPasswordPicture
             // 
-            this.confirmPasswordPicture.Image = global::UserList.Date.Properties.Resources.Incorrect;
             this.confirmPasswordPicture.Location = new System.Drawing.Point(282, 69);
             this.confirmPasswordPicture.Name = "confirmPasswordPicture";
             this.confirmPasswordPicture.Size = new System.Drawing.Size(19, 20);

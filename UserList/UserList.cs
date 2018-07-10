@@ -23,6 +23,7 @@ namespace UserList.Date
         {
             Database.DeleteUser(listUsers.SelectedItem.ToString());
             listUsers.Items.Remove(listUsers.SelectedItem);
+            deleteButton.Enabled = false;
         }
 
         private void ListUsers_SelectedIndexChanged(object sender, EventArgs e)

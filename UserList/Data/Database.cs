@@ -16,18 +16,20 @@ namespace UserList.Date
         static public void AddUser(User user)
         {
             XmlDocument xmlDocument = new XmlDocument();
-              xmlDocument.Load(@"../../Data/Users.xml");
+            xmlDocument.Load(Filename);
 
+            XmlElement xmlElement = xmlDocument.CreateElement("user");
+            xmlElement.SetAttribute("username", $"{user.Username}");
+            xmlElement.SetAttribute("password", $"{user.Password}");
 
-           XmlElement xmlElement=xmlDocument.CreateElement("sfsadf");
+            XmlNodeList nodeList = xmlDocument.DocumentElement.ChildNodes;
 
-            xmlElement.Attributes.Append(xmlDocument.CreateAttribute("name"));
-            xmlDocument.AppendChild(xmlElement);
-            xmlDocument.Save(Path.Combine(Environment.CurrentDirectory, " Users.xml" ));
-
-
-
-            //  membersList.Add(user);
+            if (xmlDocument.DocumentElement.Name == "users")
+            {
+                xmlDocument.DocumentElement.AppendChild(xmlElement);
+                xmlDocument.Save(Filename);
+            }
+              membersList.Add(user);
         }
 
         static public void DeleteUser(string username)
@@ -40,6 +42,28 @@ namespace UserList.Date
                     break;
                 }
             }
+
+            XmlDocument xmlDocument = new XmlDocument();
+            xmlDocument.Load(Filename);
+
+            if (xmlDocument.DocumentElement.Name == "users")
+            {
+                XmlNodeList users = xmlDocument.DocumentElement.ChildNodes;
+
+                foreach (XmlNode item in users)
+                {
+                    if (item.Name == "user")
+                    {
+                        if (item.Attributes["username"].Value == username)
+                        {
+                            xmlDocument.DocumentElement.RemoveChild(item);
+                            xmlDocument.Save(Filename);
+                            break;
+                        }
+                    }
+                }
+            }
+
         }
 
         static public IEnumerable<User> ListUsers
@@ -52,13 +76,18 @@ namespace UserList.Date
             XmlDocument xmlDocument = new XmlDocument();
             xmlDocument.Load(Filename);
 
-            XmlElement xmlElement = xmlDocument.CreateElement("sfsadf");
-            XmlNodeList nodeList = xmlDocument.DocumentElement.ChildNodes;
-
             if (xmlDocument.DocumentElement.Name == "users")
             {
-                xmlDocument.DocumentElement.AppendChild(xmlElement);
-                xmlDocument.Save(Filename);
+                XmlNodeList users = xmlDocument.DocumentElement.ChildNodes;
+
+                foreach (XmlNode item in users)
+                {
+                    if (item.Name == "user")
+                    {
+                        User user = new User(item.Attributes["username"].Value, item.Attributes["password"].Value);
+                        membersList.Add(user);
+                    }
+                }
             }
         }
 
