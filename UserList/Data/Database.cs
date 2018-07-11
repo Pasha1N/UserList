@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.Collections.Generic;
 using System.Xml;
-using System.Xml.Linq;
 using UserList.Date.Mvp.Models;
 
 namespace UserList.Date
@@ -29,7 +26,7 @@ namespace UserList.Date
                 xmlDocument.DocumentElement.AppendChild(xmlElement);
                 xmlDocument.Save(Filename);
             }
-              membersList.Add(user);
+            membersList.Add(user);
         }
 
         static public void DeleteUser(string username)
@@ -63,7 +60,6 @@ namespace UserList.Date
                     }
                 }
             }
-
         }
 
         static public IEnumerable<User> ListUsers
@@ -97,6 +93,7 @@ namespace UserList.Date
             {
                 return user.Username.Equals(item.Username) && user.Password.Equals(item.Password);
             }
+
             return false;
         }
     }
