@@ -89,12 +89,27 @@ namespace UserList.Date
 
         static public bool UserSearch(User user)
         {
-            foreach (User item in membersList)
-            {
-                return user.Username.Equals(item.Username) && user.Password.Equals(item.Password);
-            }
+            bool thereIsСorrespondence = false;
+            XmlDocument xmlDocument = new XmlDocument();
+            xmlDocument.Load(Filename);
 
-            return false;
+            if (xmlDocument.DocumentElement.Name == "users")
+            {
+                XmlNodeList nodeList = xmlDocument.DocumentElement.ChildNodes;
+
+                foreach (XmlNode item in nodeList)
+                {
+                    if (item.Name == "user")
+                    {
+                        if (item.Attributes["username"].Value == user.Username &&
+                            item.Attributes["password"].Value == user.Password)
+                        {
+                            thereIsСorrespondence = true;
+                        }
+                    }
+                }
+            }
+            return thereIsСorrespondence;
         }
     }
 }
