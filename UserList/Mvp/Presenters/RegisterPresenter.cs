@@ -1,5 +1,5 @@
 ﻿using System;
-using UserList.Date.AbstractFactory;
+using System.Windows.Forms;
 using UserList.Date.Mvp.Models;
 using UserList.Date.Mvp.Views;
 using UserList.Date.Properties;
@@ -9,17 +9,13 @@ namespace UserList.Date.Mvp.Presenters
     internal class RegisterPresenter : IPresenter
     {
         private CheckingInputData checkingInput = new CheckingInputData();
-        private readonly IFactoryThePresenters mainPresenter;
         private RegisterService registerService;
-        private readonly IViewRegister view;
-        private IViewUserList viewUserList;
+        private IViewRegister view;
 
-        public RegisterPresenter(IViewRegister view, IFactoryThePresenters mainPresenter, RegisterService registerService, IViewUserList viewUserList)
+        public RegisterPresenter(IViewRegister view, RegisterService registerService)
         {
-            this.mainPresenter = mainPresenter;
             this.view = view;
             this.registerService = registerService;
-            this.viewUserList = viewUserList;
             SubscribeToViewEvents();
         }
 
@@ -29,7 +25,11 @@ namespace UserList.Date.Mvp.Presenters
             {
                 if (registerService.CheckIn(view.Username, view.Password, view.ConfirmedPassword))
                 {
-                    viewUserList.Show();
+                    view.Close();
+                    MessageBox.Show($"User {view.Username} Successfully registered");
+                    view.Username = string.Empty;
+                    view.Password = string.Empty;
+                    view.ConfirmedPassword = string.Empty;
                 }
                 else
                 {

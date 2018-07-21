@@ -151,7 +151,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(362, 209);
+            this.ClientSize = new System.Drawing.Size(335, 135);
             this.Controls.Add(this.confirmPasswordPicture);
             this.Controls.Add(this.confirmPasswordtextBox);
             this.Controls.Add(this.label3);
@@ -163,7 +163,10 @@
             this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "Registration";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registration";
             ((System.ComponentModel.ISupportInitialize)(this.passwordPicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usernamePicture)).EndInit();

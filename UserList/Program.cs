@@ -1,22 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using UserList.Date.AbstractFactory;
 using UserList.Date.Mvp.Models;
 using UserList.Date.Mvp.Presenters;
-using UserList.Date.Mvp.Views;
+using UserList.Date.Properties;
 
 namespace UserList.Date
 {
     internal static class Program
     {
-        /// <summary>
-        /// Главная точка входа для приложения.
-        /// </summary>
         [STAThread]
-        static void Main()
+        internal static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -31,6 +25,12 @@ namespace UserList.Date
             UserPresenter userPresenter = new UserPresenter(userList);
             FactoryThePresenters factoryThePresenters = new FactoryThePresenters(registration, userList, registerService);
             AuthenticationPresenter authenticationPresenter = new AuthenticationPresenter(authentication, factoryThePresenters, authenticationService);
+
+            authentication.PasswordSetPicture = Resources.Incorrect;
+            authentication.UsernameSetPicture = Resources.Incorrect;
+            registration.PasswordSetPicture = Resources.Incorrect;
+            registration.UsernameSetPicture = Resources.Incorrect;
+            registration.ConfirmedPasswordSetPicture = Resources.Incorrect;
 
             authenticationPresenter.Run();
         }

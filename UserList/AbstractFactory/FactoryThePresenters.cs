@@ -24,7 +24,7 @@ namespace UserList.Date.AbstractFactory
 
         public IPresenter CreateRegisterPresenter()
         {
-            return new RegisterPresenter(viewRegister, this, registerService, viewUserList);
+            return new RegisterPresenter(viewRegister, registerService);
         }
     }
 }

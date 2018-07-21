@@ -60,7 +60,10 @@
             this.ClientSize = new System.Drawing.Size(340, 450);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.listUsers);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "UserList";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UserList";
             this.ResumeLayout(false);
 

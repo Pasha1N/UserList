@@ -129,7 +129,10 @@
             this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.usernameLable);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "Authentication";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Authentication";
             ((System.ComponentModel.ISupportInitialize)(this.passwordPicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usernamePicture)).EndInit();
