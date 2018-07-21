@@ -13,12 +13,14 @@
             this.password = password;
             this.confirmedPassword = confirmedPassword;
 
-            if (password == confirmedPassword)
+            if (!Database.UserSearch(username))
             {
-                SavingData(username, password, confirmedPassword);
-                successfulRegistration = true;
+                if (password == confirmedPassword)
+                {
+                    SavingData(username, password, confirmedPassword);
+                    successfulRegistration = true;
+                }
             }
-
             return successfulRegistration;
         }
 

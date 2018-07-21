@@ -111,5 +111,29 @@ namespace UserList.Date
             }
             return thereIsСorrespondence;
         }
+
+        static public bool UserSearch(string username)
+        {
+            bool thereIsСorrespondence = false;
+            XmlDocument xmlDocument = new XmlDocument();
+            xmlDocument.Load(Filename);
+
+            if (xmlDocument.DocumentElement.Name == "users")
+            {
+                XmlNodeList nodeList = xmlDocument.DocumentElement.ChildNodes;
+
+                foreach (XmlNode item in nodeList)
+                {
+                    if (item.Name == "user")
+                    {
+                        if (item.Attributes["username"].Value ==username)
+                        {
+                            thereIsСorrespondence = true;
+                        }
+                    }
+                }
+            }
+            return thereIsСorrespondence;
+        }
     }
 }

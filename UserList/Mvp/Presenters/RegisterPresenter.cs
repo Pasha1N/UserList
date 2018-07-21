@@ -31,6 +31,10 @@ namespace UserList.Date.Mvp.Presenters
                 {
                     viewUserList.Show();
                 }
+                else
+                {
+                    view.ShowError("A user with this name already exists");
+                }
             }
             else
             {
