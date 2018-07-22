@@ -61,9 +61,21 @@ namespace UserList.Date
             Validation?.Invoke(this, EventArgs.Empty);
         }
 
+        private void ConfirmPasswordPicture_MouseEnter(object sender, EventArgs e)
+        {
+            toolTips.Active = PictureKeys.PictureConfirmedPassword == "Incorrect" ? true : false;
+            toolTips.SetToolTip(confirmPasswordPicture, "Confirmation password cannot be empty.");
+        }
+
         private void PasswordtextBox_TextChanged(object sender, EventArgs e)
         {
             Validation?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void PasswordPicture_MouseEnter(object sender, EventArgs e)
+        {
+            toolTips.Active = PictureKeys.RegistrationPasswordPicture == "Incorrect" ? true : false;
+            toolTips.SetToolTip(passwordPicture, "Password cannot be empty.");
         }
 
         private void RegisterButton_Click(object sender, EventArgs e)
@@ -74,6 +86,12 @@ namespace UserList.Date
         private void UsernameTextBox_TextChanged(object sender, EventArgs e)
         {
             Validation?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void UsernamePicture_MouseEnter(object sender, EventArgs e)
+        {
+            toolTips.Active = PictureKeys.RegistrationUsernamePicture == "Incorrect" ? true : false;
+            toolTips.SetToolTip(usernamePicture, "Username already exist.");
         }
 
         public void EnabledRegister(bool enabled)

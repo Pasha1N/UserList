@@ -7,11 +7,11 @@ namespace UserList.Date.Mvp.Views
     {
         string Password { set; get; }
 
-        Image PasswordSetPicture { set; }
+        Image PasswordPicture { set; }
 
         string Username { set; get; }
 
-        Image UsernameSetPicture { set; }
+        Image UsernamePicture { set; }
 
         event EventHandler<EventArgs> Login;
 

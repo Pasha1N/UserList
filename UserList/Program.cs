@@ -26,8 +26,8 @@ namespace UserList.Date
             FactoryThePresenters factoryThePresenters = new FactoryThePresenters(registration, userList, registerService);
             AuthenticationPresenter authenticationPresenter = new AuthenticationPresenter(authentication, factoryThePresenters, authenticationService);
 
-            authentication.PasswordSetPicture = Resources.Incorrect;
-            authentication.UsernameSetPicture = Resources.Incorrect;
+            authentication.PasswordPicture = Resources.Incorrect;
+            authentication.UsernamePicture = Resources.Incorrect;
             registration.PasswordSetPicture = Resources.Incorrect;
             registration.UsernameSetPicture = Resources.Incorrect;
             registration.ConfirmedPasswordSetPicture = Resources.Incorrect;

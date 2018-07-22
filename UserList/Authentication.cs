@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using UserList.Date.Mvp.Views;
+using UserList.Date.Properties;
 
 namespace UserList.Date
 {
@@ -21,7 +22,7 @@ namespace UserList.Date
             set { passwordTextBox.Text = value; }
         }
 
-        public Image PasswordSetPicture
+        public Image PasswordPicture
         {
             set { passwordPicture.Image = value; }
         }
@@ -32,7 +33,7 @@ namespace UserList.Date
             set { usernameTextBox.Text = value; }
         }
 
-        public Image UsernameSetPicture
+        public Image UsernamePicture
         {
             set { usernamePicture.Image = value; }
         }
@@ -53,6 +54,12 @@ namespace UserList.Date
             Validation?.Invoke(this, EventArgs.Empty);
         }
 
+        private void PasswordPicture_MouseEnter(object sender, EventArgs e)
+        {
+            toolTips.Active = PictureKeys.AuthenticationPasswordPicture == "Incorrect" ? true : false;
+            toolTips.SetToolTip(passwordPicture, "Password cannot be empty.");
+        }
+
         private void RegisterButton_Click(object sender, EventArgs e)
         {
             Register?.Invoke(this, EventArgs.Empty);
@@ -61,6 +68,12 @@ namespace UserList.Date
         private void UsernameTextBox_TextChanged(object sender, EventArgs e)
         {
             Validation?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void UsernamePicture_MouseEnter(object sender, EventArgs e)
+        {
+            toolTips.Active = PictureKeys.AuthenticationUsernamePicture == "Incorrect" ? true : false;
+            toolTips.SetToolTip(usernamePicture, "Username cannot be less that 5 characters.");
         }
 
         public void EnabledLogin(bool enabled)

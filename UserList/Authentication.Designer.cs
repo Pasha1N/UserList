@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.usernameLable = new System.Windows.Forms.Label();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
@@ -36,6 +37,7 @@
             this.usernamePicture = new System.Windows.Forms.PictureBox();
             this.loginButton = new System.Windows.Forms.Button();
             this.registerButton = new System.Windows.Forms.Button();
+            this.toolTips = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.passwordPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usernamePicture)).BeginInit();
             this.SuspendLayout();
@@ -82,6 +84,7 @@
             this.passwordPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.passwordPicture.TabIndex = 6;
             this.passwordPicture.TabStop = false;
+            this.passwordPicture.MouseEnter += new System.EventHandler(this.PasswordPicture_MouseEnter);
             // 
             // usernamePicture
             // 
@@ -92,6 +95,7 @@
             this.usernamePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.usernamePicture.TabIndex = 5;
             this.usernamePicture.TabStop = false;
+            this.usernamePicture.MouseEnter += new System.EventHandler(this.UsernamePicture_MouseEnter);
             // 
             // loginButton
             // 
@@ -115,6 +119,10 @@
             this.registerButton.Text = "Register";
             this.registerButton.UseVisualStyleBackColor = true;
             this.registerButton.Click += new System.EventHandler(this.RegisterButton_Click);
+            // 
+            // toolTips
+            // 
+            this.toolTips.ToolTipTitle = "Validation Error";
             // 
             // Authentication
             // 
@@ -151,5 +159,6 @@
         private System.Windows.Forms.PictureBox passwordPicture;
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Button registerButton;
+        private System.Windows.Forms.ToolTip toolTips;
     }
 }

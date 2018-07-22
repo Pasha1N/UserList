@@ -58,20 +58,30 @@ namespace UserList.Date.Mvp.Presenters
         private void SubscribeToViewEvents()
         {
             view.Register += CheckIn;
-            view.Validation += verification;
+            view.Validation += Verification;
             view.ClickButtonCancel += ClickButton_Cancel;
         }
 
-        public void verification(object sendler, EventArgs e)
+        public void Verification(object sendler, EventArgs e)
         {
             view.PasswordSetPicture = checkingInput.PasswordValidation(view.Password)
                 ? Resources.Correct : Resources.Incorrect;
 
+            PictureKeys.RegistrationPasswordPicture =
+                checkingInput.PasswordValidation(view.Password) == true ? "Correct" : "Incorrect";//жесть))
+
             view.UsernameSetPicture = checkingInput.UsernameValidation(view.Username)
                 ? Resources.Correct : Resources.Incorrect;
 
+            PictureKeys.RegistrationUsernamePicture =
+                Database.UserSearch(view.Username) == true ? "Incorrect" : "Correct";//жесть))
+
+
             view.ConfirmedPasswordSetPicture = checkingInput.CheckPasswordConfirmation(view.Password, view.ConfirmedPassword)
                  ? Resources.Correct : Resources.Incorrect;
+
+            PictureKeys.PictureConfirmedPassword =//жесть))
+                checkingInput.CheckPasswordConfirmation(view.Password,view.ConfirmedPassword) == true ? "Correct" : "Incorrect";
 
             if (checkingInput.PasswordValidation(view.Password) &&
                 checkingInput.UsernameValidation(view.Username) &&

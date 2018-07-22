@@ -9,6 +9,7 @@ namespace UserList.Date.Mvp.Presenters
     internal class AuthenticationPresenter : IPresenter
     {
         private readonly AuthenticationService authenticationService;
+        private CheckingInputData checkingInput = new CheckingInputData();
         private readonly IFactoryThePresenters mainPresenter;
         private readonly IViewAuthentication view;
 
@@ -51,15 +52,32 @@ namespace UserList.Date.Mvp.Presenters
         {
             view.Login += Authentication;
             view.Register += ShowRegistrationWindow;
-            view.Validation += verification;
+            view.Validation += Verification;
         }
 
-        public void verification(object sendler, EventArgs e)
+        public void Verification(object sendler, EventArgs e)
         {
-            CheckingInputData checkingInput = new CheckingInputData();
+            if (checkingInput.UsernameValidation(view.Username))
+            {
+                view.UsernamePicture = Resources.Correct;
+                PictureKeys.AuthenticationUsernamePicture = "Correct";
+            }
+            else
+            {
+                view.UsernamePicture = Resources.Incorrect;
+                PictureKeys.AuthenticationUsernamePicture = "Incorrect";
+            }
 
-            view.PasswordSetPicture = checkingInput.PasswordValidation(view.Password) ? Resources.Correct : Resources.Incorrect;
-            view.UsernameSetPicture = checkingInput.UsernameValidation(view.Username) ? Resources.Correct : Resources.Incorrect;
+            if (checkingInput.PasswordValidation(view.Password))
+            {
+                view.PasswordPicture = Resources.Correct;
+                PictureKeys.AuthenticationPasswordPicture = "Correct";
+            }
+            else
+            {
+                view.PasswordPicture = Resources.Incorrect;
+                PictureKeys.AuthenticationPasswordPicture = "Incorrect";
+            }
 
             if (checkingInput.PasswordValidation(view.Password) && checkingInput.UsernameValidation(view.Username))
             {

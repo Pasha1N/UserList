@@ -66,6 +66,7 @@
     <Compile Include="Mvp\Views\IView.cs" />
     <Compile Include="Mvp\Views\IViewUserList.cs" />
     <Compile Include="Mvp\Views\IViewRegister.cs" />
+    <Compile Include="PictureKeys.cs" />
     <Compile Include="Registration.cs">
       <SubType>Form</SubType>
     </Compile>

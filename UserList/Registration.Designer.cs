@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.registerButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.passwordPicture = new System.Windows.Forms.PictureBox();
@@ -39,6 +40,7 @@
             this.confirmPasswordtextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.confirmPasswordPicture = new System.Windows.Forms.PictureBox();
+            this.toolTips = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.passwordPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usernamePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.confirmPasswordPicture)).BeginInit();
@@ -74,6 +76,7 @@
             this.passwordPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.passwordPicture.TabIndex = 14;
             this.passwordPicture.TabStop = false;
+            this.passwordPicture.MouseEnter += new System.EventHandler(this.PasswordPicture_MouseEnter);
             // 
             // usernamePicture
             // 
@@ -84,6 +87,7 @@
             this.usernamePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.usernamePicture.TabIndex = 13;
             this.usernamePicture.TabStop = false;
+            this.usernamePicture.MouseEnter += new System.EventHandler(this.UsernamePicture_MouseEnter);
             // 
             // passwordtextBox
             // 
@@ -146,6 +150,11 @@
             this.confirmPasswordPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.confirmPasswordPicture.TabIndex = 19;
             this.confirmPasswordPicture.TabStop = false;
+            this.confirmPasswordPicture.MouseEnter += new System.EventHandler(this.ConfirmPasswordPicture_MouseEnter);
+            // 
+            // toolTips
+            // 
+            this.toolTips.ToolTipTitle = "Validation Error";
             // 
             // Registration
             // 
@@ -189,5 +198,6 @@
         private System.Windows.Forms.TextBox confirmPasswordtextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox confirmPasswordPicture;
+        private System.Windows.Forms.ToolTip toolTips;
     }
 }
