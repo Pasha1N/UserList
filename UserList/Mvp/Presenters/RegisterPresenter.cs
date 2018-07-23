@@ -68,19 +68,19 @@ namespace UserList.Date.Mvp.Presenters
                 ? Resources.Correct : Resources.Incorrect;
 
             PictureKeys.RegistrationPasswordPicture =
-                checkingInput.PasswordValidation(view.Password) == true ? "Correct" : "Incorrect";//жесть))
+                checkingInput.PasswordValidation(view.Password) == true ? "Correct" : "Incorrect";
 
             view.UsernameSetPicture = checkingInput.UsernameValidation(view.Username)
                 ? Resources.Correct : Resources.Incorrect;
 
             PictureKeys.RegistrationUsernamePicture =
-                Database.UserSearch(view.Username) == true ? "Incorrect" : "Correct";//жесть))
+                Database.UserSearch(view.Username) == true ? "Incorrect" : "Correct";
 
 
             view.ConfirmedPasswordSetPicture = checkingInput.CheckPasswordConfirmation(view.Password, view.ConfirmedPassword)
                  ? Resources.Correct : Resources.Incorrect;
 
-            PictureKeys.PictureConfirmedPassword =//жесть))
+            PictureKeys.PictureConfirmedPassword =
                 checkingInput.CheckPasswordConfirmation(view.Password,view.ConfirmedPassword) == true ? "Correct" : "Incorrect";
 
             if (checkingInput.PasswordValidation(view.Password) &&
