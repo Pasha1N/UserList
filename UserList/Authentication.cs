@@ -39,9 +39,7 @@ namespace UserList.Date
         }
 
         public event EventHandler<EventArgs> Login;
-
         public event EventHandler<EventArgs> Register;
-
         public event EventHandler<EventArgs> Validation;
 
         private void LoginButton_Click(object sender, EventArgs e)

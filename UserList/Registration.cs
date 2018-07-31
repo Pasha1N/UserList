@@ -46,9 +46,7 @@ namespace UserList.Date
         }
 
         public event EventHandler<EventArgs> ClickButtonCancel;
-
         public event EventHandler<EventArgs> Register;
-
         public event EventHandler<EventArgs> Validation;
 
         private void CancelButton_Click(object sender, EventArgs e)
