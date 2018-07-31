@@ -77,7 +77,6 @@ namespace UserList.Mvp.Presenters
             PictureKeys.RegistrationUsernamePicture =
                 Database.UserSearch(view.Username) == true ? "Incorrect" : "Correct";
 
-
             view.ConfirmedPasswordSetPicture = checkingInput.CheckPasswordConfirmation(view.Password, view.ConfirmedPassword)
                  ? Resources.Correct : Resources.Incorrect;
 
