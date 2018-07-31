@@ -10,7 +10,7 @@ namespace UserList.Date
 
         private static IList<User> members = new List<User>();
 
-        static public void AddUser(User user)
+        public static void AddUser(User user)
         {
             XmlDocument xmlDocument = new XmlDocument();
             xmlDocument.Load(Filename);
@@ -29,7 +29,7 @@ namespace UserList.Date
             members.Add(user);
         }
 
-        static public void DeleteUser(string username)
+        public static void DeleteUser(string username)
         {
             for (int i = 0; i < members.Count; i++)
             {
@@ -62,7 +62,7 @@ namespace UserList.Date
             }
         }
 
-        static public IEnumerable<User> Users => members;
+        public static IEnumerable<User> Users => members;
 
         static public void Initialisation()
         {
@@ -84,7 +84,7 @@ namespace UserList.Date
             }
         }
 
-        static public bool UserSearch(User user)
+        public static bool UserSearch(User user)
         {
             bool thereIsСorrespondence = false;
             XmlDocument xmlDocument = new XmlDocument();
@@ -109,7 +109,7 @@ namespace UserList.Date
             return thereIsСorrespondence;
         }
 
-        static public bool UserSearch(string username)
+        public static bool UserSearch(string username)
         {
             bool thereIsСorrespondence = false;
             XmlDocument xmlDocument = new XmlDocument();
