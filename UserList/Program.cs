@@ -15,7 +15,7 @@ namespace UserList.Date
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Database.Initialisetion();
+            Database.Initialisation();
             ApplicationContext applicationContext = new ApplicationContext();
             Authentication authentication = new Authentication(applicationContext);
             AuthenticationService authenticationService = new AuthenticationService();

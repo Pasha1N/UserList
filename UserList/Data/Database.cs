@@ -67,7 +67,7 @@ namespace UserList.Date
             get { return members; }
         }
 
-        static public void Initialisetion()
+        static public void Initialisation()
         {
             XmlDocument xmlDocument = new XmlDocument();
             xmlDocument.Load(Filename);
