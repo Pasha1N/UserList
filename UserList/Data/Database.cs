@@ -8,7 +8,7 @@ namespace UserList.Date
     {
         private const string Filename = @"../../Data/Users.xml";
 
-        private static IList<User> membersList = new List<User>();
+        private static IList<User> members = new List<User>();
 
         static public void AddUser(User user)
         {
@@ -26,16 +26,16 @@ namespace UserList.Date
                 xmlDocument.DocumentElement.AppendChild(xmlElement);
                 xmlDocument.Save(Filename);
             }
-            membersList.Add(user);
+            members.Add(user);
         }
 
         static public void DeleteUser(string username)
         {
-            for (int i = 0; i < membersList.Count; i++)
+            for (int i = 0; i < members.Count; i++)
             {
-                if (membersList[i].Username == username)
+                if (members[i].Username == username)
                 {
-                    membersList.RemoveAt(i);
+                    members.RemoveAt(i);
                     break;
                 }
             }
@@ -62,9 +62,9 @@ namespace UserList.Date
             }
         }
 
-        static public IEnumerable<User> ListUsers
+        static public IEnumerable<User> Users
         {
-            get { return membersList; }
+            get { return members; }
         }
 
         static public void Initialisetion()
@@ -81,7 +81,7 @@ namespace UserList.Date
                     if (item.Name == "user")
                     {
                         User user = new User(item.Attributes["username"].Value, item.Attributes["password"].Value);
-                        membersList.Add(user);
+                        members.Add(user);
                     }
                 }
             }

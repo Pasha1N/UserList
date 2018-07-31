@@ -33,7 +33,7 @@ namespace UserList.Date
 
         public void Initialization()
         {
-            foreach (User user in Database.ListUsers)
+            foreach (User user in Database.Users)
             {
                 listUsers.Items.Add(user.Username);
             }
