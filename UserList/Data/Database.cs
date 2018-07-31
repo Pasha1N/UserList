@@ -126,7 +126,7 @@ namespace UserList.Date
                 {
                     if (item.Name == "user")
                     {
-                        if (item.Attributes["username"].Value ==username)
+                        if (item.Attributes["username"].Value == username)
                         {
                             thereIsСorrespondence = true;
                         }
