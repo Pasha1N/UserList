@@ -56,7 +56,7 @@ namespace UserList.Date
 
         private void PasswordPicture_MouseEnter(object sender, EventArgs e)
         {
-            toolTips.Active = PictureKeys.AuthenticationPasswordPicture == "Incorrect" ? true : false;
+            toolTips.Active = PictureKeys.AuthenticationPasswordPicture == "Incorrect";
             toolTips.SetToolTip(passwordPicture, "Password cannot be empty.");
         }
 
@@ -72,20 +72,13 @@ namespace UserList.Date
 
         private void UsernamePicture_MouseEnter(object sender, EventArgs e)
         {
-            toolTips.Active = PictureKeys.AuthenticationUsernamePicture == "Incorrect" ? true : false;
+            toolTips.Active = PictureKeys.AuthenticationUsernamePicture == "Incorrect";
             toolTips.SetToolTip(usernamePicture, "Username cannot be less that 5 characters.");
         }
 
         public void EnabledLogin(bool enabled)
         {
-            if (enabled)
-            {
-                loginButton.Enabled = true;
-            }
-            else
-            {
-                loginButton.Enabled = false;
-            }
+            loginButton.Enabled = enabled;
         }
 
         public new void Show()

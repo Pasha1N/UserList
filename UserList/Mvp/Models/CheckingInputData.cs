@@ -6,10 +6,7 @@
         {
             bool successfulVerification = false;
 
-            if (confirmedPassword == password && password.Length > 0)
-            {
-                successfulVerification = true;
-            }
+            successfulVerification = confirmedPassword == password && password.Length > 0;
 
             return successfulVerification;
         }
@@ -18,10 +15,7 @@
         {
             bool successfulVerification = true;
 
-            if (password.Length < 1)
-            {
-                successfulVerification = false;
-            }
+            successfulVerification = password.Length >= 1;
 
             return successfulVerification;
         }
@@ -30,10 +24,7 @@
         {
             bool successfulVerification = true;
 
-            if (username.Length < 5)
-            {
-                successfulVerification = false;
-            }
+            successfulVerification = username.Length >= 5;
 
             return successfulVerification;
         }
