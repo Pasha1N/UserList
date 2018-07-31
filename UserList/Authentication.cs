@@ -2,7 +2,6 @@
 using System.Drawing;
 using System.Windows.Forms;
 using UserList.Mvp.Views;
-//using UserList.Properties;
 
 namespace UserList.Date
 {
