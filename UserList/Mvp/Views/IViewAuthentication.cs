@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 
-namespace UserList.Date.Mvp.Views
+namespace UserList.Mvp.Views
 {
     internal interface IViewAuthentication : IView
     {

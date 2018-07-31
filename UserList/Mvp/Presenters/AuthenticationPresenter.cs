@@ -1,10 +1,10 @@
 ﻿using System;
 using UserList.Date.AbstractFactory;
-using UserList.Date.Mvp.Models;
-using UserList.Date.Mvp.Views;
+using UserList.Mvp.Models;
+using UserList.Mvp.Views;
 using UserList.Date.Properties;
 
-namespace UserList.Date.Mvp.Presenters
+namespace UserList.Mvp.Presenters
 {
     internal class AuthenticationPresenter : IPresenter
     {

@@ -1,6 +1,6 @@
-﻿using UserList.Date.Mvp.Views;
+﻿using UserList.Mvp.Views;
 
-namespace UserList.Date.Mvp.Presenters
+namespace UserList.Mvp.Presenters
 {
     internal class UserPresenter : IPresenter
     {

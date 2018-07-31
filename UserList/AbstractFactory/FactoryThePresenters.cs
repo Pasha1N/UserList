@@ -1,6 +1,6 @@
-﻿using UserList.Date.Mvp.Models;
-using UserList.Date.Mvp.Presenters;
-using UserList.Date.Mvp.Views;
+﻿using UserList.Mvp.Models;
+using UserList.Mvp.Presenters;
+using UserList.Mvp.Views;
 
 namespace UserList.Date.AbstractFactory
 {

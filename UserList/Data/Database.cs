@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Xml;
-using UserList.Date.Mvp.Models;
+using UserList.Mvp.Models;
 
 namespace UserList.Date
 {

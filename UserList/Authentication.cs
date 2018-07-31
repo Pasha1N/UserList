@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using UserList.Date.Mvp.Views;
-using UserList.Date.Properties;
+using UserList.Mvp.Views;
+//using UserList.Properties;
 
 namespace UserList.Date
 {

@@ -1,4 +1,6 @@
-﻿namespace UserList.Date.Mvp.Models
+﻿using UserList.Date;
+
+namespace UserList.Mvp.Models
 {
     internal class AuthenticationService
     {

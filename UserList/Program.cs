@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using UserList.Date.AbstractFactory;
-using UserList.Date.Mvp.Models;
-using UserList.Date.Mvp.Presenters;
+using UserList.Mvp.Models;
+using UserList.Mvp.Presenters;
 using UserList.Date.Properties;
 
 namespace UserList.Date

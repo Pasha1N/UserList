@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Windows.Forms;
-using UserList.Date.Mvp.Models;
-using UserList.Date.Mvp.Views;
+using UserList.Mvp.Models;
+using UserList.Mvp.Views;
 using UserList.Date.Properties;
+using UserList.Date;
 
-namespace UserList.Date.Mvp.Presenters
+namespace UserList.Mvp.Presenters
 {
     internal class RegisterPresenter : IPresenter
     {
@@ -81,7 +82,7 @@ namespace UserList.Date.Mvp.Presenters
                  ? Resources.Correct : Resources.Incorrect;
 
             PictureKeys.PictureConfirmedPassword =
-                checkingInput.CheckPasswordConfirmation(view.Password,view.ConfirmedPassword) == true ? "Correct" : "Incorrect";
+                checkingInput.CheckPasswordConfirmation(view.Password, view.ConfirmedPassword) == true ? "Correct" : "Incorrect";
 
             if (checkingInput.PasswordValidation(view.Password) &&
                 checkingInput.UsernameValidation(view.Username) &&

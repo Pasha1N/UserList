@@ -1,4 +1,4 @@
-﻿namespace UserList.Date.Mvp.Models
+﻿namespace UserList.Mvp.Models
 {
     internal class CheckingInputData
     {
