@@ -62,10 +62,7 @@ namespace UserList.Date
             }
         }
 
-        static public IEnumerable<User> Users
-        {
-            get { return members; }
-        }
+        static public IEnumerable<User> Users => members;
 
         static public void Initialisation()
         {
