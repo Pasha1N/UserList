@@ -12,7 +12,7 @@ namespace UserList
         private static string authenticationPasswordPicture = "Incorrect";
         private static string registrationUsernamePicture = "Incorrect";
         private static string registrationPasswordPicture = "Incorrect";
-        private static string pictureСonfirmedPassword= "Incorrect";
+        private static string pictureСonfirmedPassword = "Incorrect";
 
         public static string AuthenticationUsernamePicture
         {
