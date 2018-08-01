@@ -73,6 +73,7 @@
     <Compile Include="Registration.Designer.cs">
       <DependentUpon>Registration.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserAlreadyExists.cs" />
     <Compile Include="UserList.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -27,7 +27,7 @@ namespace UserList.Mvp.Presenters
                 if (registerService.CheckIn(view.Username, view.Password, view.ConfirmedPassword))
                 {
                     view.Close();
-                    MessageBox.Show($"User {view.Username} Successfully registered");
+                    MessageBox.Show($"User {view.Username} successfully registered.");
                     view.Username = string.Empty;
                     view.Password = string.Empty;
                     view.ConfirmedPassword = string.Empty;
@@ -71,11 +71,11 @@ namespace UserList.Mvp.Presenters
             PictureKeys.RegistrationPasswordPicture =
                 checkingInput.PasswordValidation(view.Password) == true ? "Correct" : "Incorrect";
 
-            view.UsernameSetPicture = checkingInput.UsernameValidation(view.Username)
-                ? Resources.Correct : Resources.Incorrect;
+            PictureKeys.RegistrationUsernamePicture = Database.UserSearch(view.Username)
+               == true ? "Incorrect" : "Correct";
 
-            PictureKeys.RegistrationUsernamePicture =
-                Database.UserSearch(view.Username) == true ? "Incorrect" : "Correct";
+            view.UsernameSetPicture = checkingInput.UsernameValidation(view.Username) && !Database.UserSearch(view.Username)
+               ? Resources.Correct : Resources.Incorrect;
 
             view.ConfirmedPasswordSetPicture = checkingInput.CheckPasswordConfirmation(view.Password, view.ConfirmedPassword)
                  ? Resources.Correct : Resources.Incorrect;
