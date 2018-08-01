@@ -46,15 +46,15 @@ namespace UserList.Date
             Login?.Invoke(this, EventArgs.Empty);
         }
 
-        private void PasswordTextBox_TextChanged(object sender, EventArgs e)
-        {
-            Validation?.Invoke(this, EventArgs.Empty);
-        }
-
         private void PasswordPicture_MouseEnter(object sender, EventArgs e)
         {
             toolTips.Active = PictureKeys.AuthenticationPasswordPicture == "Incorrect";
             toolTips.SetToolTip(passwordPicture, "Password cannot be empty.");
+        }
+
+        private void PasswordTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Validation?.Invoke(this, EventArgs.Empty);
         }
 
         private void RegisterButton_Click(object sender, EventArgs e)
@@ -62,15 +62,15 @@ namespace UserList.Date
             Register?.Invoke(this, EventArgs.Empty);
         }
 
-        private void UsernameTextBox_TextChanged(object sender, EventArgs e)
-        {
-            Validation?.Invoke(this, EventArgs.Empty);
-        }
-
         private void UsernamePicture_MouseEnter(object sender, EventArgs e)
         {
             toolTips.Active = PictureKeys.AuthenticationUsernamePicture == "Incorrect";
             toolTips.SetToolTip(usernamePicture, "Username cannot be less that 5 characters.");
+        }
+
+        private void UsernameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Validation?.Invoke(this, EventArgs.Empty);
         }
 
         public void EnabledLogin(bool enabled)

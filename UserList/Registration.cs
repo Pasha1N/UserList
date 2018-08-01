@@ -54,18 +54,13 @@ namespace UserList.Date
             ClickButtonCancel?.Invoke(this, EventArgs.Empty);
         }
 
-        private void ConfirmPasswordtextBox_TextChanged(object sender, EventArgs e)
-        {
-            Validation?.Invoke(this, EventArgs.Empty);
-        }
-
         private void ConfirmPasswordPicture_MouseEnter(object sender, EventArgs e)
         {
             toolTips.Active = PictureKeys.PictureConfirmedPassword == "Incorrect";
             toolTips.SetToolTip(confirmPasswordPicture, "Confirmation password cannot be empty");
         }
 
-        private void PasswordtextBox_TextChanged(object sender, EventArgs e)
+        private void ConfirmPasswordtextBox_TextChanged(object sender, EventArgs e)
         {
             Validation?.Invoke(this, EventArgs.Empty);
         }
@@ -76,20 +71,25 @@ namespace UserList.Date
             toolTips.SetToolTip(passwordPicture, "Password cannot be empty");
         }
 
+        private void PasswordtextBox_TextChanged(object sender, EventArgs e)
+        {
+            Validation?.Invoke(this, EventArgs.Empty);
+        }
+
         private void RegisterButton_Click(object sender, EventArgs e)
         {
             Register?.Invoke(this, EventArgs.Empty);
-        }
-
-        private void UsernameTextBox_TextChanged(object sender, EventArgs e)
-        {
-            Validation?.Invoke(this, EventArgs.Empty);
         }
 
         private void UsernamePicture_MouseEnter(object sender, EventArgs e)
         {
             toolTips.Active = PictureKeys.RegistrationUsernamePicture == "Incorrect";
             toolTips.SetToolTip(usernamePicture, "Username already exist");
+        }
+
+        private void UsernameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Validation?.Invoke(this, EventArgs.Empty);
         }
 
         public void EnabledRegister(bool enabled)
