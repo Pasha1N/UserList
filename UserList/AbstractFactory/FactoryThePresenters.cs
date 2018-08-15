@@ -2,7 +2,7 @@
 using UserList.Mvp.Presenters;
 using UserList.Mvp.Views;
 
-namespace UserList.Date.AbstractFactory
+namespace UserList.AbstractFactory
 {
     internal class FactoryThePresenters : IFactoryThePresenters
     {
