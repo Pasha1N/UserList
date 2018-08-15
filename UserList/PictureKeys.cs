@@ -37,7 +37,5 @@
             get => pictureСonfirmedPassword;
             set => pictureСonfirmedPassword = value;
         }
-
-
     }
 }
