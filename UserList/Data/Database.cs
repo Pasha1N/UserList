@@ -2,7 +2,7 @@
 using System.Xml;
 using UserList.Mvp.Models;
 
-namespace UserList.Date
+namespace UserList.Data
 {
     internal static class Database
     {

@@ -1,4 +1,4 @@
-﻿using UserList.Date;
+﻿using UserList.Data;
 
 namespace UserList.Mvp.Models
 {

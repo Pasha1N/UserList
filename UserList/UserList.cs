@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using UserList.Mvp.Models;
 using UserList.Mvp.Views;
 
-namespace UserList.Date
+namespace UserList.Data
 {
     internal partial class UserList : Form, IViewUserList
     {

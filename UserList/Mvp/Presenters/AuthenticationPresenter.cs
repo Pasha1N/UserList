@@ -2,7 +2,7 @@
 using UserList.AbstractFactory;
 using UserList.Mvp.Models;
 using UserList.Mvp.Views;
-using UserList.Date.Properties;
+using UserList.Data.Properties;
 
 namespace UserList.Mvp.Presenters
 {

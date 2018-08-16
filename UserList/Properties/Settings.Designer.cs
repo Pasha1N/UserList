@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UserList.Date.Properties
+namespace UserList.Data.Properties
 {
 
 

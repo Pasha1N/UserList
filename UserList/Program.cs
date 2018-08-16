@@ -3,9 +3,9 @@ using System.Windows.Forms;
 using UserList.AbstractFactory;
 using UserList.Mvp.Models;
 using UserList.Mvp.Presenters;
-using UserList.Date.Properties;
+using UserList.Data.Properties;
 
-namespace UserList.Date
+namespace UserList.Data
 {
     internal static class Program
     {

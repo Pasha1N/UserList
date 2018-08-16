@@ -1,4 +1,4 @@
-﻿namespace UserList.Date
+﻿namespace UserList.Data
 {
     partial class Authentication
     {

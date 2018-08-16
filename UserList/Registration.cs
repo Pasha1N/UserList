@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using UserList.Mvp.Views;
 
-namespace UserList.Date
+namespace UserList.Data
 {
     internal partial class Registration : Form, IViewRegister
     {
@@ -20,8 +20,8 @@ namespace UserList.Date
 
         public Image ConfirmedPasswordSetPicture
         {
-            set { confirmPasswordPicture.Image = value; }
-        }
+            set { confirmPasswordPicture.Image = value; }  
+        } 
 
         public string Password
         {

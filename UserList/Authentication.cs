@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using UserList.Mvp.Views;
 
-namespace UserList.Date
+namespace UserList.Data
 {
     internal partial class Authentication : Form, IViewAuthentication
     {
@@ -38,7 +38,7 @@ namespace UserList.Date
         }
 
         public event EventHandler<EventArgs> Login;
-        public event EventHandler<EventArgs> Register;
+        public event EventHandler<EventArgs> Register; 
         public event EventHandler<EventArgs> Validation;
 
         private void LoginButton_Click(object sender, EventArgs e)
