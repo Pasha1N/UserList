@@ -20,8 +20,8 @@ namespace UserList.Data
 
         public Image ConfirmedPasswordSetPicture
         {
-            set { confirmPasswordPicture.Image = value; }  
-        } 
+            set { confirmPasswordPicture.Image = value; }
+        }
 
         public string Password
         {
@@ -48,6 +48,11 @@ namespace UserList.Data
         public event EventHandler<EventArgs> ClickButtonCancel;
         public event EventHandler<EventArgs> Register;
         public event EventHandler<EventArgs> Validation;
+
+        public void EnabledRegister(bool enabled)
+        {
+            registerButton.Enabled = enabled;
+        }
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
@@ -81,22 +86,6 @@ namespace UserList.Data
             Register?.Invoke(this, EventArgs.Empty);
         }
 
-        private void UsernamePicture_MouseEnter(object sender, EventArgs e)
-        {
-            toolTips.Active = PictureKeys.RegistrationUsernamePicture == "Incorrect";
-            toolTips.SetToolTip(usernamePicture, "Username already exist");
-        }
-
-        private void UsernameTextBox_TextChanged(object sender, EventArgs e)
-        {
-            Validation?.Invoke(this, EventArgs.Empty);
-        }
-
-        public void EnabledRegister(bool enabled)
-        {
-            registerButton.Enabled = enabled;
-        }
-
         public new void Show()
         {
             registerButton.Enabled = false;
@@ -106,6 +95,17 @@ namespace UserList.Data
         public void ShowError(string message)
         {
             MessageBox.Show(message);
+        }
+
+        private void UsernamePicture_MouseEnter(object sender, EventArgs e)
+        {
+            toolTips.Active = PictureKeys.RegistrationUsernamePicture == "Incorrect";
+            toolTips.SetToolTip(usernamePicture, "Username already exist");
+        }
+
+        private void UsernameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Validation?.Invoke(this, EventArgs.Empty);
         }
     }
 }

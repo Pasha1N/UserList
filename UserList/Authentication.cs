@@ -38,8 +38,13 @@ namespace UserList.Data
         }
 
         public event EventHandler<EventArgs> Login;
-        public event EventHandler<EventArgs> Register; 
+        public event EventHandler<EventArgs> Register;
         public event EventHandler<EventArgs> Validation;
+
+        public void EnabledLogin(bool enabled)
+        {
+            loginButton.Enabled = enabled;
+        }
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
@@ -62,22 +67,6 @@ namespace UserList.Data
             Register?.Invoke(this, EventArgs.Empty);
         }
 
-        private void UsernamePicture_MouseEnter(object sender, EventArgs e)
-        {
-            toolTips.Active = PictureKeys.AuthenticationUsernamePicture == "Incorrect";
-            toolTips.SetToolTip(usernamePicture, "Username cannot be less that 5 characters.");
-        }
-
-        private void UsernameTextBox_TextChanged(object sender, EventArgs e)
-        {
-            Validation?.Invoke(this, EventArgs.Empty);
-        }
-
-        public void EnabledLogin(bool enabled)
-        {
-            loginButton.Enabled = enabled;
-        }
-
         public new void Show()
         {
             context.MainForm = this;
@@ -87,6 +76,17 @@ namespace UserList.Data
         public void ShowError(string messege)
         {
             MessageBox.Show(messege, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void UsernamePicture_MouseEnter(object sender, EventArgs e)
+        {
+            toolTips.Active = PictureKeys.AuthenticationUsernamePicture == "Incorrect";
+            toolTips.SetToolTip(usernamePicture, "Username cannot be less that 5 characters.");
+        }
+
+        private void UsernameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Validation?.Invoke(this, EventArgs.Empty);
         }
     }
 }
